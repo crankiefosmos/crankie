@@ -68,6 +68,11 @@
 
 ///// Career Section /////////
 
+.career-row {
+  padding: 6vh 3vw 3vh;
+  font-size: 15px;
+}
+
 .career-row h1, h2, p {
   width: 100%;
 }
@@ -85,6 +90,7 @@
 
 .career-row p {
   padding-top: 10px;
+  width: 650px;
 }
 
 .bullet {
@@ -96,20 +102,14 @@
 }
 
 #softwareSection {
-  padding: 6vh 3vw 3vh;
-  font-size: 15px;
   visibility: hidden;
 }
 
 #engineeringSection{
-  padding: 6vh 3vw 3vh;
-  font-size: 15px;
   visibility: hidden;
 }
 
 #artistSection {
-  padding: 6vh 3vw 3vh;
-  font-size: 15px;
   visibility: hidden;
 }
 

@@ -3,6 +3,8 @@
 }
 @model List<ArtGallery>
 
+<meta name=”viewport” content=”width=device-width, initial-scale=1″>
+
 <head>
     <link rel="stylesheet" type="text/css" href="~/Style/CSS/Main.css">
     <script src="lib/jquery/dist/jquery.min.js"></script>
@@ -14,8 +16,8 @@
     <div id="nameSection">
         <h1>ISAIAH YOUNG</h1>
         <h2>
-            <span class="careerLink" style="animation-delay: 1s" onclick="scrollToElement('software-development')">FULL STACK DEVELOPER |</span>
-            <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineering')">ENGINEER |</span> 
+            <span class="careerLink" style="animation-delay: 1s" onclick="scrollToElement('software-development')">FULL STACK DEVELOPER</span> |
+            <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineering')">ENGINEER</span> | 
             <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('art')">ARTIST</span>
         </h2>
         <p>
@@ -28,71 +30,112 @@
     <div id="intro-image-container"></div>
 </div>
 
-<div class="career-row" id="softwareSection">
-    <div class="dotWrapper">
-        <div class="dot"></div>
-        <div class="line" id="softwareLine"></div>
-    </div>
-    <div style="padding-left: 40px">
-        <h1 id="software-development">SOFTWARE DEVELOPER</h1>
-        <h2>ENERGY SYSTEMS LABORATORY, TEXAS A&M</h2>
-        <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-            that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
-        <p class="bullet">&#8226; test</p>
-        <p>P.S. I designed and coded this portfolio without a template!</p>
-    </div>
-</div>
-<div class="career-row" id="engineeringSection">
-    <div class="dotWrapper">
-        <div class="dot"></div>
-        <div class="line" id="engineeringLine"></div>
-    </div>
-    <div style="padding-left: 40px">
-        <h1 id="engineering">ENGINEER</h1>
-        <h2>TEXAS A&M UNIVERSITY</h2>
-        <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-            that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
-        <p class="bullet">&#8226; test</p>
-        <p>By the way, I designed and coded this very page without a template!</p>
-    </div>
-    
-</div>
-
-<div class="career-row" id="artistSection">
-    <div class="dotWrapper">
-        <div class="dot"></div>
-        <div class="line" id="artistLine"></div>
-    </div>
-    <div style="padding-left: 40px">
-        <div class="image-text" id="art-text">
-            <h1 id="art">ARTIST</h1>
+<div style="max-width: 1050px; margin: auto">
+    <div class="career-row" id="softwareSection">
+        <div class="dotWrapper">
+            <div class="dot"></div>
+            <div class="line" id="softwareLine"></div>
         </div>
-        <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-            that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
+        <div style="padding-left: 40px">
+            <h1 id="software-development">SOFTWARE DEVELOPER</h1>
+            <h2>ENERGY SYSTEMS LABORATORY, TEXAS A&M</h2>
+            <div style="">
+                <div>
+                    <p>The Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
+                        here requires not only an ability to code but a working knowledge of mechanical engineering.
+                        As a software developer at the ESL, I take great care in crafting efficient, readable code
+                        that gives as much to our users as it does to my fellow developers. Being a part of the ESL
+                        software team means:
+                    </p>
+                </div>
+                <div>
+                    <p class="bullet">&#8226; Learning to write full stack code for data analysis and visualization</p>
+                    <p class="bullet">&#8226; Developing front-end, user-oriented interfaces</p>
+                    <p class="bullet">&#8226; Debuging, maintaining, and improving self-documenting legacy code</p>
+                    <p class="bullet">&#8226; Collaborating with a team of engineers to design unit-test software</p>
+                </div>
+            </div>
+        
+        </div>
     </div>
+    <div class="career-row" id="engineeringSection">
+        <div class="dotWrapper">
+            <div class="dot"></div>
+            <div class="line" id="engineeringLine"></div>
+        </div>
+        <div style="padding-left: 40px">
+            <h1 id="engineering">ENGINEER</h1>
+            <h2>TEXAS A&M UNIVERSITY</h2>
+            <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
+                that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
+            <p class="bullet">&#8226; test</p>
+            <p>By the way, I designed and coded this very page without a template!</p>
+        </div>
     
-    <div id="slider">
-        <button style="left: -30px; outline: none" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
-        <button style="right: -30px; outline: none" id="scrollArtRight" class="scrollArtButton">&#62;</button>
-        <div style="overflow: hidden">
-            <div id="slide-track">
+    </div>
+
+    <div class="career-row" id="artistSection">
+        <div class="dotWrapper">
+            <div class="dot"></div>
+            <div class="line" id="artistLine"></div>
+        </div>
+        <div style="padding-left: 40px">
+            <div class="image-text" id="art-text">
+                <h1 id="art">ARTIST</h1>
+            </div>
+            <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
+                that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
+        </div>
+    
+        <div id="slider">
+            <button style="left: -30px; outline: none" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
+            <button style="right: -30px; outline: none" id="scrollArtRight" class="scrollArtButton">&#62;</button>
+            <div style="overflow: hidden">
+                <div id="slide-track">
                 
-                @foreach (var piece in Model)
-                {
-                    <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
-                        <img class="slideImg" src="@piece.Directory" alt=""/>
-                    </div>
+                    @foreach (var piece in Model)
+                    {
+                        <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
+                            <img class="slideImg" src="@piece.Directory" alt=""/>
+                        </div>
                     
-                }
-                <div class="slide">
-                    <img class="slideImg" src="../Style/Images/code.jpg" alt=""/>
+                    }
+                    <div class="slide">
+                        <img class="slideImg" src="../Style/Images/code.jpg" alt=""/>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="career-row" id="wrapUpSection">
+        <div class="dotWrapper">
+            <div class="dot"></div>
+            <div class="line" id="wrapUpLine"></div>
+        </div>
+        <div style="padding-left: 40px">
+            <h1>THE FULL PACKAGE</h1>
+            <p>WHAT UP BOIIII</p>
+        </div>
+    </div>
+
+    <div class="career-row" id="contactSection">
+        <div class="dotWrapper">
+            <div class="dot"></div>
+            <div class="line" id="contactLine"></div>
+        </div>
+        <div style="padding-left: 40px">
+            <h1>CONTACT</h1>
+            <P>youngisa12@gmail.com</p>
+            <p>(830) - 370 - 7101</p>
+        </div>
+    
+    </div>
 </div>
 
-<div id="contactSection"></div>
+
+
+
 
 <div id="artModal" class="modal">
         <div class="modal-content">
