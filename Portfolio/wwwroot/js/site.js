@@ -1,5 +1,27 @@
 ﻿
-var rows = ['softwareSection', 'engineeringSection', 'artistSection'];
+var screenWidth = window.innerWidth;
+
+
+resizeElements = () => {
+    var skillLevels = $('.skillLevel');
+    var skills = $('.skillLevel span');
+    var skillSet = $('#softwareSkills');
+    
+    if (skillSet.width() < 300) {
+        skillLevels.css('display', 'none');
+        skills.css('float', 'none');
+        skillSet.css('text-align', 'center')
+    }
+    else {
+        skillLevels.css('display', 'block');
+        skills.css('float', 'left');
+        skillSet.css('text-align', 'left')
+    }
+}
+$(document).ready(function () {resizeElements();})
+window.addEventListener('resize', resizeElements);
+
+var rows = ['lookAtMe', 'softwareSection', 'engineeringSection', 'artistSection'];
 $(window).scroll(function () {
     if (rows.length < 1){
         $(this).off('scroll');
@@ -11,12 +33,12 @@ $(window).scroll(function () {
     var elemIdTo;
     switch (rows[0]) {
         case "engineeringSection": 
-            offset = 200; 
+            offset = 600; 
             lineId = 'engineeringLine';
             elemIdTo = 'artistSection';
             break;
         case "artistSection": 
-            offset = 400; 
+            offset = 1100; 
             lineId = 'artistLine';
             elemIdTo = 'contactSection';
             break;
@@ -26,9 +48,10 @@ $(window).scroll(function () {
             elemIdTo = 'engineeringSection';
     }
     if ($(window).scrollTop() > (element.getBoundingClientRect().top + offset) ) {
-        
+
+        slideCareer(rows[0]);
         $('#' + rows[0]).css('visibility', 'visible').hide().fadeIn(1500);
-        growLine(rows[0], elemIdTo, lineId)
+        // growLine(rows[0], elemIdTo, lineId)
         rows.splice(0, 1);
     }
 });
@@ -43,7 +66,6 @@ growLine = (elemIdFrom, elemIdTo, lineId) => {
                 easing: 'linear',
                 duration: 3000})
 }
-
 
 function scrollToElement(elementId) {
     var speed = calculateScrollSpeed(elementId);
@@ -63,6 +85,74 @@ calculateScrollSpeed = (elementId) => {
     }
     return 3000
 }
+
+slideCareer = (elementId) => {
+    
+    switch (elementId) {
+        case 'softwareSection':
+            $({x: -200}).animate({x: 0}, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
+                }
+            });
+            
+            setTimeout(function() {
+            $('#softwareSkills').css('visibility', 'visible').hide().fadeIn(2500);
+            $({x: -400}).animate({x: 0}, {
+                duration: 3000,
+                easing: 'swing',
+                step: function () {
+                    $('#softwareSkills').css({transform: 'translateX(' + this.x + 'px)'});
+                }
+            });
+            }, 2000);
+            
+            break;
+        case 'engineeringSection':
+            $({x: 200}).animate({x: 0}, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
+                }
+            });
+
+            setTimeout(function() {
+                $('#engInterest').css('visibility', 'visible').hide().fadeIn(2500);
+                $({x: 400}).animate({x: 0}, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function () {
+                        $('#engInterest').css({transform: 'translateX(' + this.x + 'px)'});
+                    }
+                });
+            }, 2000);
+            break;
+        case 'artistSection':
+            $({y: 200}).animate({y: 0}, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $('#' + elementId).css({transform: 'translateY(' + this.y + 'px)'});
+                }
+            });
+            break;
+        case 'lookAtMe':
+            $({x: 200}).animate({x: 0}, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
+                }
+            });
+            break;
+    }
+    
+}
+
+
 
 
 var shouldScroll = true;
@@ -106,6 +196,30 @@ scrollModalRight = () => {
     lastChild.prependTo($('#modal-slide-track'));
     $('#modal-slide-track div:last-child').remove();
 }
+
+window.addEventListener('keydown', function(event){
+    const direction = event.key;
+    if (artModal.style.display === "block"){
+        switch (direction) {
+            case "ArrowLeft":
+                scrollModalLeft();
+                break;
+            case "ArrowRight":
+                scrollModalRight();
+                break;
+        }
+    }
+    else{
+        switch (direction) {
+            case "ArrowLeft":
+                scrollArtLeft();
+                break;
+            case "ArrowRight":
+                scrollArtRight();
+                break;
+        }
+    }
+})
 
 $('#slider').mouseenter(() => shouldScroll = false);
 $('#slider').mouseleave(() => shouldScroll = true);

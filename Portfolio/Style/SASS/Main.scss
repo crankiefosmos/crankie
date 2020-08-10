@@ -64,13 +64,31 @@
   background-size: 100% 100%;
 }
 
+///// Me Section ///////
 
+#lookAtMe {
+  width: 20vw; 
+  margin: 20px auto;
+  height: 20vw; 
+  border-radius: 50%; 
+  background-size: 100% 100%;
+  background-image: url('../../Style/Images/me.jpg');
+  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+}
 
 ///// Career Section /////////
 
 .career-row {
-  padding: 6vh 3vw 3vh;
+  visibility: hidden;
+  max-width: 93vw;
+  padding: 6vh 3vw;
+  margin: 20px;
   font-size: 15px;
+  border: 1px solid #f1f1f1;
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: max-content;
+  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
 }
 
 .career-row h1, h2, p {
@@ -90,27 +108,63 @@
 
 .career-row p {
   padding-top: 10px;
-  width: 650px;
-}
-
-.bullet {
-  padding-left: 5vw;
+  max-width: 625px;
+  width: 100%;
 }
 
 #navBar {
   border-bottom: 1px solid black;
 }
 
-#softwareSection {
+#lookAtMe {
   visibility: hidden;
+}
+
+#softwareSection {
+  z-index: 2;
 }
 
 #engineeringSection{
-  visibility: hidden;
+  width: 60%;
+  margin-left: 10px;
+}
+
+#engInterest {
+  width: 38%;
 }
 
 #artistSection {
-  visibility: hidden;
+  text-align: center;
+}
+
+#artistSection p {
+  margin: auto;
+  max-width: 95vw;
+}
+
+#softwareSkills{
+  padding: 6vh;
+  width: 28%;
+  display: grid; 
+  margin-left: 10px
+}
+
+#softwareSkills span {
+ 
+}
+
+.skillLevel {
+  background-color: white;
+  width: 40%;
+  margin-top: 12px;
+  height: 5px;
+  border-radius: 5px;
+  float: right;
+}
+
+.skillLevel div {
+  background-color: var(--line-color);
+  height: 100%;
 }
 
 .dotWrapper {
@@ -190,16 +244,17 @@
 }
 
 .scrollArtButton {
-  width: 40px; 
+  width: 50px; 
   color: white;
   position: absolute;
-  height: 40px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--scrollButtonColor);
   opacity: 0.6;
   top: 35%;
   border: none;
-  z-index: 3
+  z-index: 3;
+  outline: none
 }
 
 .scrollArtButton:hover {

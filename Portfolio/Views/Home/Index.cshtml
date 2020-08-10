@@ -11,7 +11,7 @@
     <script src="js/site.js"></script>
 </head>
 
-<body>
+<body style="background-color: #fafafa;">
 <div id="intro-section">
     <div id="nameSection">
         <h1>ISAIAH YOUNG</h1>
@@ -30,56 +30,103 @@
     <div id="intro-image-container"></div>
 </div>
 
-<div style="max-width: 1050px; margin: auto">
-    <div class="career-row" id="softwareSection">
-        <div class="dotWrapper">
-            <div class="dot"></div>
-            <div class="line" id="softwareLine"></div>
-        </div>
-        <div style="padding-left: 40px">
-            <h1 id="software-development">SOFTWARE DEVELOPER</h1>
-            <h2>ENERGY SYSTEMS LABORATORY, TEXAS A&M</h2>
-            <div style="">
-                <div>
-                    <p>The Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
-                        here requires not only an ability to code but a working knowledge of mechanical engineering.
-                        As a software developer at the ESL, I take great care in crafting efficient, readable code
-                        that gives as much to our users as it does to my fellow developers. Being a part of the ESL
-                        software team means:
-                    </p>
-                </div>
-                <div>
-                    <p class="bullet">&#8226; Learning to write full stack code for data analysis and visualization</p>
-                    <p class="bullet">&#8226; Developing front-end, user-oriented interfaces</p>
-                    <p class="bullet">&#8226; Debuging, maintaining, and improving self-documenting legacy code</p>
-                    <p class="bullet">&#8226; Collaborating with a team of engineers to design unit-test software</p>
+
+<div>
+    <div id="lookAtMe"></div>
+
+    <div style="width: 95vw; margin: auto; display: flex">
+        <div class="career-row" id="softwareSection" style="width: 68%">
+            <div>
+                <h1 id="software-development">SOFTWARE DEVELOPER</h1>
+                <h2>ENERGY SYSTEMS LABORATORY, TEXAS A&M</h2>
+                <div style="">
+                    <div>
+                        <p>The Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
+                            here requires not only an ability to code but a working knowledge of mechanical engineering.
+                            As a software developer at the ESL, I take great care in crafting efficient, readable code
+                            that gives as much to our users as it does to my fellow developers. Being a part of the ESL
+                            software team means:
+                        </p>
+                    </div>
+                    <div>
+                        <p class="bullet">&#8226; Learning to write full stack code for data analysis and visualization</p>
+                        <p class="bullet">&#8226; Developing front-end, user-oriented interfaces</p>
+                        <p class="bullet">&#8226; Debuging, maintaining, and improving self-documenting legacy code</p>
+                        <p class="bullet">&#8226; Collaborating with a team of engineers to design unit-test software</p>
+                    </div>
                 </div>
             </div>
+        </div>
         
+        <div class="career-row" id="softwareSkills">
+            <h2 style="text-align: center">SKILLS</h2>
+            <div>
+                <span>C#</span>
+                <div class="skillLevel">
+                    <div style="width: 90%"></div>
+                </div>
+            </div>
+            <div>
+                <span>JavaScript</span>
+                <div class="skillLevel">
+                    <div style="width: 70%"></div>
+                </div>
+            </div>
+            <div>
+               <span>HTML5</span>
+                <div class="skillLevel">
+                    <div style="width: 100%"></div>
+                </div>
+            </div>
+            <div>
+                <span>CSS3</span>
+                <div class="skillLevel">
+                    <div style="width: 100%"></div>
+                </div>
+            </div>
+            <div>
+                <span>jQuery</span>
+                <div class="skillLevel">
+                    <div style="width: 40%"></div>
+                </div>
+            </div>
+            <div>
+               <span>Python</span>
+                <div class="skillLevel">
+                    <div style="width: 20%"></div>
+                </div>
+            </div>
+            <div>
+                <span>SQL Database</span>
+                <div class="skillLevel">
+                    <div style="width: 10%"></div>
+                </div>
+            </div>
         </div>
+        
     </div>
-    <div class="career-row" id="engineeringSection">
-        <div class="dotWrapper">
-            <div class="dot"></div>
-            <div class="line" id="engineeringLine"></div>
-        </div>
-        <div style="padding-left: 40px">
-            <h1 id="engineering">ENGINEER</h1>
-            <h2>TEXAS A&M UNIVERSITY</h2>
-            <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-                that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
-            <p class="bullet">&#8226; test</p>
-            <p>By the way, I designed and coded this very page without a template!</p>
-        </div>
     
+    <div style="width: 95vw; margin: auto; display: flex">
+        
+        <div class="career-row" id="engInterest">
+            stuff
+        </div>
+
+        <div class="career-row" id="engineeringSection">
+            <div>
+                <h1 id="engineering">MECHANICAL ENGINEER</h1>
+                <h2>TEXAS A&M UNIVERSITY</h2>
+                <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
+                    that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
+                <p class="bullet">&#8226; test</p>
+                <p>By the way, I designed and coded this very page without a template!</p>
+            </div>
+        </div>
     </div>
+    
 
     <div class="career-row" id="artistSection">
-        <div class="dotWrapper">
-            <div class="dot"></div>
-            <div class="line" id="artistLine"></div>
-        </div>
-        <div style="padding-left: 40px">
+        <div>
             <div class="image-text" id="art-text">
                 <h1 id="art">ARTIST</h1>
             </div>
@@ -88,8 +135,8 @@
         </div>
     
         <div id="slider">
-            <button style="left: -30px; outline: none" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
-            <button style="right: -30px; outline: none" id="scrollArtRight" class="scrollArtButton">&#62;</button>
+            <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
+            <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
             <div style="overflow: hidden">
                 <div id="slide-track">
                 
@@ -109,11 +156,8 @@
     </div>
 
     <div class="career-row" id="wrapUpSection">
-        <div class="dotWrapper">
-            <div class="dot"></div>
-            <div class="line" id="wrapUpLine"></div>
-        </div>
-        <div style="padding-left: 40px">
+       
+        <div>
             <h1>THE FULL PACKAGE</h1>
             <p>WHAT UP BOIIII</p>
         </div>
