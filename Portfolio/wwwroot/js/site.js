@@ -107,7 +107,7 @@ slideCareer = (elementId) => {
                     $('#softwareSkills').css({transform: 'translateX(' + this.x + 'px)'});
                 }
             });
-            }, 2000);
+            }, 1000);
             
             break;
         case 'engineeringSection':
@@ -120,15 +120,15 @@ slideCareer = (elementId) => {
             });
 
             setTimeout(function() {
-                $('#engInterest').css('visibility', 'visible').hide().fadeIn(2500);
+                $('#engProjects').css('visibility', 'visible').hide().fadeIn(2500);
                 $({x: 400}).animate({x: 0}, {
                     duration: 3000,
                     easing: 'swing',
                     step: function () {
-                        $('#engInterest').css({transform: 'translateX(' + this.x + 'px)'});
+                        $('#engProjects').css({transform: 'translateX(' + this.x + 'px)'});
                     }
                 });
-            }, 2000);
+            }, 1000);
             break;
         case 'artistSection':
             $({y: 200}).animate({y: 0}, {
