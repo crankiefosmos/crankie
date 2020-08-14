@@ -67,13 +67,16 @@
 ///// Me Section ///////
 
 #lookAtMe {
-  width: 20vw; 
   margin: 20px auto;
-  height: 20vw; 
-  border-radius: 50%; 
-  background-size: 100% 100%;
   background-image: url('../../Style/Images/me.jpg');
-  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+}
+
+.circleImg {
+  margin: auto;
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  background-size: 100% 100%;
 }
 
 ///// Career Section /////////
@@ -132,11 +135,19 @@
 #engProjects {
   width: 38%;
   text-align: center;
+  display: flex;
+  padding-bottom: 10vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #engProjects div {
   letter-spacing: .2vw;
-  margin: 20px;
+  cursor: pointer;
+}
+
+#engProjects div:hover {
+  color: rgb(236, 178, 154)
 }
 
 #artistSection {
@@ -156,7 +167,7 @@
 }
 
 #softwareSkills span {
- 
+  letter-spacing: .2vw;
 }
 
 .skillLevel {
@@ -283,9 +294,6 @@
 .slideImg {
   height: 150px;
   width: 150px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
 }
 
 .slide:hover{
@@ -369,3 +377,59 @@
   opacity: 0.7;
 }
 
+///////  Leader ////////
+
+#leaderSection {
+  width:90vw;
+  margin: auto;
+  display: flex; 
+  flex-wrap: wrap;
+  flex-direction: row
+}
+
+.leaderRole {
+  width: 30%;
+  min-width: 350px;
+  margin: 0 auto;
+}
+
+.leaderRole h1 {
+  margin: 8px auto;
+  width: max-content;
+  max-width: 250px;
+  text-align: center;
+  font-size: 2vw;
+  letter-spacing: 0.7vw;
+  font-weight: bold;
+}
+
+.leaderRole h2 {
+  margin: 5px auto;
+  width: max-content;
+  text-align: center;
+  cursor: context-menu;
+  font-size: 1.8vw;
+  letter-spacing: 0.5vw;
+}
+
+.leaderRole p {
+  text-align: center;
+  width: 80%;
+  margin: 13px auto;
+}
+
+#buccPic {
+  background-image: url("../../Style/Images/bucc.jpg");
+}
+
+#barkPic {
+  background-size: 150% 100%;
+  background-position: 30%;
+  background-image: url("../../Style/Images/bark.jpg");
+}
+
+#mcPic {
+  background-size: 150% 150%;
+  background-position: 50% 35%;
+  background-image: url("../../Style/Images/mcPic.jpg");;
+}

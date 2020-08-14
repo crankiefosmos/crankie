@@ -10,12 +10,14 @@ resizeElements = () => {
     if (skillSet.width() < 300) {
         skillLevels.css('display', 'none');
         skills.css('float', 'none');
-        skillSet.css('text-align', 'center')
+        skillSet.css('text-align', 'center');
+        skillSet.css('padding', '6vh');
     }
     else {
         skillLevels.css('display', 'block');
         skills.css('float', 'left');
         skillSet.css('text-align', 'left')
+        skillSet.css('padding', '6vh 5vw');
     }
 }
 $(document).ready(function () {resizeElements();})
