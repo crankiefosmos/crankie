@@ -6,20 +6,22 @@ resizeElements = () => {
     var skillLevels = $('.skillLevel');
     var skills = $('.skillLevel span');
     var skillSet = $('#softwareSkills');
+    var atest = skillSet.width();
     
-    if (skillSet.width() < 300) {
-        skillLevels.css('display', 'none');
-        skills.css('float', 'none');
-        skillSet.css('text-align', 'center');
-        skillSet.css('padding', '6vh');
-    }
-    else {
+    if (skillSet.width() > 250) {
         skillLevels.css('display', 'block');
         skills.css('float', 'left');
         skillSet.css('text-align', 'left')
         skillSet.css('padding', '6vh 5vw');
     }
+    else {
+        skillLevels.css('display', 'none');
+        skills.css('float', 'none');
+        skillSet.css('text-align', 'center');
+        skillSet.css('padding', '6vh');
+    }
 }
+
 $(document).ready(function () {resizeElements();})
 window.addEventListener('resize', resizeElements);
 
