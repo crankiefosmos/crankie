@@ -9,10 +9,56 @@
     <link rel="stylesheet" type="text/css" href="~/Style/CSS/Main.css">
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="js/site.js"></script>
+    
+    <style>
+        #navbar {
+            background-color: transparent;
+            position: sticky;
+            position: -webkit-sticky;
+            top: 0;
+            height: 5vh;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            z-index: 99;
+        }
+        
+        #navs{
+            display: flex;
+            flex-direction: row;
+            width: max-content;
+            float: right;
+            line-height: 5vh;
+        }
+        
+        #navbar a {
+            font-size: 2.2vh;
+            margin: 0 2vw;
+            color: white;
+            width: max-content;
+            letter-spacing: .8vw;
+        }
+        
+        #navbar a:hover {
+            text-decoration: none;
+            transform: scale(1.1);
+        }
+        
+    </style>
+    
 </head>
 
-<body style="background-color: #fafafa;">
-<div id="intro-section">
+<body style="background-color: #fafafa; height: max-content">
+<div id="navbar">
+    <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
+        <div id="navs">
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+        </div>
+    </div>
+</div>
+
+<div id="intro-section" style="transform: translateY(-7vh)">
     <div id="nameSection">
         <h1>ISAIAH YOUNG</h1>
         <h2>
@@ -33,16 +79,18 @@
 
 
 <div>
-    <div id="lookAtMe" class="circleImg"></div>
+<div id="lookAtMe" class="circleImg"></div>
 
-    <div id="softwareTitle" class="sectionTitle">
-        <h1>DEVELOPER</h1>
-    </div>
-    <div style="width: 95vw; margin: auto; display: flex">
-        <div class="career-row" id="softwareSection" style="width: 68%">
+<div id="softwareTitle" class="sectionTitle">
+    <h1>DEVELOPER</h1>
+</div>
+
+    <div style="width: 95vw; margin: auto; display: flex; justify-content: space-around">
+
+        <div class="career-row" id="softwareSection" style="width: 55%">
             <div>
                 <h1 id="software-development">SOFTWARE DEVELOPER</h1>
-                <h2>ENERGY SYSTEMS LABORATORY, TEXAS A&M</h2>
+                <h2>ENERGY SYSTEMS LABORATORY <br/> TEXAS A&M</h2>
                 <div style="">
                     <div>
                         <p>The Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
@@ -107,7 +155,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     
     <div id="engineerTitle" class="sectionTitle">

@@ -351,3 +351,5 @@ C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\bin\Debug\netcore
 C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\obj\Debug\netcoreapp3.1\Portfolio.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
+C:\Users\Isaiah Young\RiderProjects\Online Portfolio\Portfolio\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs

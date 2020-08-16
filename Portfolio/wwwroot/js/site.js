@@ -32,44 +32,24 @@ $(window).scroll(function () {
         return
     }
     let element = document.getElementById(rows[0]);
-    var offset;
-    var lineId;
-    var elemIdTo;
-    switch (rows[0]) {
-        case "engineeringSection": 
-            offset = 600; 
-            lineId = 'engineeringLine';
-            elemIdTo = 'artistSection';
-            break;
-        case "artistSection": 
-            offset = 1100; 
-            lineId = 'artistLine';
-            elemIdTo = 'contactSection';
-            break;
-        default: 
-            offset = 0;
-            lineId = 'softwareLine';
-            elemIdTo = 'engineeringSection';
-    }
-    if ($(window).scrollTop() > (element.getBoundingClientRect().top + offset) ) {
+    // var offset;
+    // switch (rows[0]) {
+    //     case "engineeringSection": 
+    //         offset = 1000; 
+    //         break;
+    //     case "artistSection": 
+    //         offset = 1600;
+    //         break;
+    //     default: 
+    //         offset = 400;
+    // }
+    if ($(window).scrollTop() > (element.getBoundingClientRect().top) ) {
 
         slideCareer(rows[0]);
         $('#' + rows[0]).css('visibility', 'visible').hide().fadeIn(1500);
-        // growLine(rows[0], elemIdTo, lineId)
         rows.splice(0, 1);
     }
 });
-
-growLine = (elemIdFrom, elemIdTo, lineId) => {
-    let elFrom = document.getElementById(elemIdFrom);
-    let elTo = document.getElementById(elemIdTo);
-    let y = elTo.getBoundingClientRect().top - elFrom.getBoundingClientRect().top;
-    $('#' + lineId).animate(
-        {height: y}, 
-        {delay: 3000,
-                easing: 'linear',
-                duration: 3000})
-}
 
 function scrollToElement(elementId) {
     var speed = calculateScrollSpeed(elementId);
