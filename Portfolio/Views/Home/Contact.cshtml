@@ -6,11 +6,25 @@
 
 <html>
 <head>
-    <title>title</title>
+    <link rel="stylesheet" type="text/css" href="~/Style/CSS/Main.css">
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="js/site.js"></script>
 </head>
 <body>
 <div>
-      this works too
+    <div>
+        <h1>Lets get crackin</h1>
+    </div>
+    
+    <div>
+        <fieldset>
+            <label for="clientName">Name</label><input type="text" maxlength="100" id="clientName"/>
+            <label for="clientAddress">Address</label><input type="text" maxlength="100" id="clientAddress"/>
+            <label for="clientSubject">Subject</label><input type="text" maxlength="100" id="clientSubject"/>
+            <label for="clientMessage">Message</label><input type="text" maxlength="100" id="clientMessage"/>
+            <input type="submit" value="Send!" onclick="SendMail()" />
+        </fieldset>
+    </div>
 </div>
 </body>
 </html>

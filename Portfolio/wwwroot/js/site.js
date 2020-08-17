@@ -240,4 +240,39 @@ window.onclick = function(event) {
     }
 }
 
+openContactSuccess = () => {
+    alert("success, check yo email cuh");
+}
+
+openContactFail = () => {
+    alert("damn, son. it really do be like that sometimes")
+}
+
+var clientName;
+var clientMessage;
+var clientSubject;
+var clientAddress;
+
+SendMail = () => {
+    try {
+        clientName = document.getElementById('clientName').value;
+        clientMessage = document.getElementById('clientMessage').value;
+        clientSubject = document.getElementById('clientSubject').value;
+        clientAddress = document.getElementById('clientName').value;
+    }
+    catch(e){
+        alert("Oops! Looks like some info is missing.")
+        return;
+    }
+    
+    $.ajax({
+        url: "/Home/SendMail",
+        type: "POST",
+        traditional: true,
+        data: { name: clientName, address: clientAddress, subject: clientSubject, clientMessage: clientMessage },
+        success: openContactSuccess,
+        error: openContactFail
+        });
+}
+
 // @Html.ActionLink("help documentation", "Help", new { id = @Model.Id }, new { target = "_blank" })

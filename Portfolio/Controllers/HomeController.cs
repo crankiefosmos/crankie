@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Portfolio.Models;
+using System.Net;
+using System.Net.Mail;
 
 namespace Portfolio.Controllers
 {
@@ -46,6 +48,27 @@ namespace Portfolio.Controllers
         public IActionResult About()
         {
             return View();
+        }
+
+        public ActionResult SendMail(string name, string address, string subject, string clientMessage)
+        {
+            MailAddress to = new MailAddress("youngisa12@gmail.com");  
+            MailAddress from = new MailAddress(address);
+
+            MailMessage message = new MailMessage(from, to) {Subject = subject, Body = clientMessage};
+            
+            SmtpClient client = new SmtpClient("smtp.server.address", 2525);
+
+            try  
+            {    
+                client.Send(message);
+                return Json(new { success = true});
+            }  
+            catch (SmtpException ex)  
+            {  
+                Console.WriteLine(ex.ToString());  
+                return Json(new { error = true});
+            }  
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
