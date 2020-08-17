@@ -8,11 +8,41 @@
 <head>
     <link rel="stylesheet" type="text/css" href="~/Style/CSS/Main.css">
     <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="js/site.js"></script>
 </head>
-<body>
-<div>
-      hey it works
+<body style="overflow: hidden; background-color: rgb(109, 126, 127);">
+<div id="navbar">
+    <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
+        <div id="navs">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+        </div>
+    </div>
+</div>
+
+<div style="height: 110%; z-index: -3; width: 60%; position: absolute; left: 0; top: -5vh; background-color: #fafafa"></div>
+@* <div id="meDecal"></div> *@
+
+<div id="aboutPageWrapper">
+    <div id="aboutMe">
+        <h1>about</h1>
+        <p style="width: 30vw">The easiest way to use sass is via the command line.
+
+            First, you will need to install Ruby and the program following the instructions on this page.
+
+            Now you can just click the startsass.bat file in the root of Compass, and the proper command line command will run.
+
+            By default, .css.map files are created. Do not add these to version control. When making changes, be sure
+            to add the .scss and the .css file to version control. The .scss file is the original source, and you need
+            the compiled .css file to make the site function (this way when someone pulls down the site fresh they don't
+            need to compile everything.)
+
+            If you don't want that, you can still do you yourself manually. See below</p>
+    </div>
+
+    <div id="meWrapper">
+        <div id="aboutMeImg"></div>
+    </div>
 </div>
 </body>
 </html>

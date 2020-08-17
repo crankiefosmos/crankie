@@ -11,59 +11,31 @@
     <script src="js/site.js"></script>
     
     <style>
-        #navbar {
-            background-color: transparent;
-            position: sticky;
-            position: -webkit-sticky;
-            top: 0;
-            height: 5vh;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            z-index: 99;
-        }
-        
-        #navs{
-            display: flex;
-            flex-direction: row;
-            width: max-content;
-            float: right;
-            line-height: 5vh;
-        }
-        
-        #navbar a {
-            font-size: 2.2vh;
-            margin: 0 2vw;
-            color: white;
-            width: max-content;
-            letter-spacing: .8vw;
-        }
-        
-        #navbar a:hover {
-            text-decoration: none;
-            transform: scale(1.1);
-        }
+       
         
     </style>
     
 </head>
 
 <body style="background-color: #fafafa; height: max-content">
+
 <div id="navbar">
     <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
         <div id="navs">
-            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
-            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" onsubmit="fadeOutPage()" >HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="About" onsubmit="fadeOutPage()">ABOUT</a>
             <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
         </div>
     </div>
 </div>
 
-<div id="intro-section" style="transform: translateY(-7vh)">
+<div id="pageWrapper">
+<div id="intro-section" style="transform: translateY(-5vh)">
     <div id="nameSection">
         <h1>ISAIAH YOUNG</h1>
         <h2>
             <span class="careerLink" style="animation-delay: 1s" onclick="scrollToElement('software-development')">FULL STACK DEVELOPER</span> |
-            <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineering')">ENGINEER</span> | 
+            <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineering')">ENGINEER</span> |
             <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('art')">LEADER</span> |
             <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('art')">ARTIST</span>
         </h2>
@@ -79,11 +51,11 @@
 
 
 <div>
-<div id="lookAtMe" class="circleImg"></div>
+    @* <div id="lookAtMe" class="circleImg"></div> *@
 
-<div id="softwareTitle" class="sectionTitle">
-    <h1>DEVELOPER</h1>
-</div>
+    <div id="softwareTitle" class="sectionTitle">
+        <h1>DEVELOPER</h1>
+    </div>
 
     <div style="width: 95vw; margin: auto; display: flex; justify-content: space-around">
 
@@ -156,7 +128,7 @@
             </div>
         </div>
     </div>
-    
+
     <div id="engineerTitle" class="sectionTitle">
         <h1>ENGINEER</h1>
     </div>
@@ -184,8 +156,8 @@
     <div id="leaderTitle" class="sectionTitle">
         <h1>LEADER</h1>
     </div>
-    
-    
+
+
     <div style="margin-top: 5vh; padding: 5vh">
         <div id="leaderSection">
             <div class="leaderRole">
@@ -221,65 +193,37 @@
 
         </div>
     </div>
-    
-<div id="artistTitle" class="sectionTitle">
-    <h1>ARTIST</h1>
-</div>
 
-<div class="career-row" id="artistSection">
-    <div>
-        @* <div class="image-text" id="art-text"> *@
-        @*     <h1 id="art">ARTIST</h1> *@
-        @* </div> *@
-                
+    <div id="artistTitle" class="sectionTitle">
+        <h1>ARTIST</h1>
     </div>
-        
-    <div id="slider">
-        <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
-        <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
-        <div style="overflow: hidden">
-            <div id="slide-track">
-                    
-                @foreach (var piece in Model)
-                {
-                    <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
-                        <img class="slideImg" src="@piece.Directory" alt=""/>
+
+    <div class="career-row" id="artistSection">
+        <div id="slider">
+            <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
+            <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
+            <div style="overflow: hidden">
+                <div id="slide-track">
+
+                    @foreach (var piece in Model)
+                    {
+                        <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
+                            <img class="slideImg" src="@piece.Directory" alt=""/>
+                        </div>
+
+                    }
+                    <div class="slide">
+                        <img class="slideImg" src="../Style/Images/code.jpg" alt=""/>
                     </div>
-                        
-                }
-                <div class="slide">
-                    <img class="slideImg" src="../Style/Images/code.jpg" alt=""/>
                 </div>
             </div>
         </div>
-    </div>
-    <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-        that gives as much to our users as it does to my fellow developers. Writing clean code means..s a software
-        developer at the ESL, I take great care in crafting efficient, readable code                                                                                                           that gives as much to our users as it does to my fellow developers. Writing clea
-    </p>
-</div>
-
-
-<div class="career-row" id="wrapUpSection">
-       
-        <div>
-            <h1>THE FULL PACKAGE</h1>
-            <p>WHAT UP BOIIII</p>
-        </div>
+        <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
+            that gives as much to our users as it does to my fellow developers. Writing clean code means..s a software
+            developer at the ESL, I take great care in crafting efficient, readable code that gives as much to our users as it does to my fellow developers. Writing clea
+        </p>
     </div>
 
-    <div class="career-row" id="contactSection">
-        <div class="dotWrapper">
-            <div class="dot"></div>
-            <div class="line" id="contactLine"></div>
-        </div>
-        <div style="padding-left: 40px">
-            <h1>CONTACT</h1>
-            <P>youngisa12@gmail.com</p>
-            <p>(830) - 370 - 7101</p>
-        </div>
-    
-    </div>
 </div>
 
 
@@ -287,27 +231,28 @@
 
 
 <div id="artModal" class="modal">
-        <div class="modal-content">
-            <span id="closeArt">&times;</span>
-            <div id="modalSlider">
-                <button id="scrollModalLeft" class="scrollArtButton">&#60;</button>
-                <button id="scrollModalRight" class="scrollArtButton">&#62;</button>
-                <div style="overflow: hidden">
-                    <div id="modal-slide-track">
-                        @foreach (var piece in Model)
-                        {
-                            <div id=@piece.Name class="modalSlide">
-                                <img class="modalImg" src="@piece.Directory" alt=""/>
-                            </div>
-                        }
-                        <div class="modalSlide">
-                            <img class="modalImg" src="../Style/Images/code.jpg" alt=""/>
+    <div class="modal-content">
+        <span id="closeArt">&times;</span>
+        <div id="modalSlider">
+            <button id="scrollModalLeft" class="scrollArtButton">&#60;</button>
+            <button id="scrollModalRight" class="scrollArtButton">&#62;</button>
+            <div style="overflow: hidden">
+                <div id="modal-slide-track">
+                    @foreach (var piece in Model)
+                    {
+                        <div id=@piece.Name class="modalSlide">
+                            <img class="modalImg" src="@piece.Directory" alt=""/>
                         </div>
+                    }
+                    <div class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/code.jpg" alt=""/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 
 <script>
 (function(){

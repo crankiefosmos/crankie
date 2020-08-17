@@ -25,7 +25,7 @@ resizeElements = () => {
 $(document).ready(function () {resizeElements();})
 window.addEventListener('resize', resizeElements);
 
-var rows = ['lookAtMe', 'softwareSection', 'engineeringSection', 'artistSection'];
+var rows = ['softwareSection', 'engineeringSection', 'artistSection'];
 $(window).scroll(function () {
     if (rows.length < 1){
         $(this).off('scroll');
@@ -123,19 +123,18 @@ slideCareer = (elementId) => {
                 }
             });
             break;
-        case 'lookAtMe':
-            $({x: 200}).animate({x: 0}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
-                }
-            });
-            break;
+        // case 'lookAtMe':
+        //     $({x: 200}).animate({x: 0}, {
+        //         duration: 2000,
+        //         easing: 'swing',
+        //         step: function () {
+        //             $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
+        //         }
+        //     });
+        //     break;
     }
     
 }
-
 
 
 
