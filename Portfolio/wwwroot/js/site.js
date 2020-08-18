@@ -214,7 +214,6 @@ $('#scrollModalLeft').click(scrollModalLeft);
 $('#scrollModalRight').click(scrollModalRight);
 
 var artModal = document.getElementById("artModal");
-document.getElementById('closeArt').addEventListener('click', () => artModal.style.display = "none");
 
 var modalImgWidth = -600;
 getFirstPieceToShow =(initialPieceName)=> {
@@ -232,6 +231,7 @@ getFirstPieceToShow =(initialPieceName)=> {
 function showArtModal(initialPieceName) {
     getFirstPieceToShow(initialPieceName);
     artModal.style.display = "block";
+    document.getElementById('closeArt').addEventListener('click', () => artModal.style.display = "none");
 }
 
 window.onclick = function(event) {
@@ -269,7 +269,7 @@ SendMail = () => {
         url: "/Home/SendMail",
         type: "POST",
         traditional: true,
-        data: { name: clientName, address: clientAddress, subject: clientSubject, clientMessage: clientMessage },
+        data: { name: clientName, address: clientAddress, clientMessage: clientMessage },
         success: openContactSuccess,
         error: openContactFail
         });

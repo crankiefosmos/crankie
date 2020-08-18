@@ -55,12 +55,12 @@ namespace Portfolio.Controllers
             MailAddress to = new MailAddress("youngisa12@gmail.com");  
             MailAddress from = new MailAddress(address);
 
-            MailMessage message = new MailMessage(from, to) {Subject = subject, Body = clientMessage};
+            MailMessage message = new MailMessage(from, to) {Subject = "Prospective Employment", Body = clientMessage};
             
             SmtpClient client = new SmtpClient("smtp.server.address", 2525);
 
             try  
-            {    
+            {   
                 client.Send(message);
                 return Json(new { success = true});
             }  
