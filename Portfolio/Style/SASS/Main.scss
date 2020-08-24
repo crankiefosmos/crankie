@@ -510,7 +510,7 @@ body {
 }
 
 
-/////////  About  Me  ///////////////
+/////////////////////  About  Me  //////////////////////////////////
 
 #aboutPageWrapper {
   margin: auto;
@@ -588,6 +588,8 @@ body {
 }
 
 
+
+
 @media screen and (max-width: 800px) {
   #engineerTitle h1 {
     font-size: 12vh;
@@ -601,6 +603,10 @@ body {
 
   #aboutMe {
     margin-right: 80px;
+  }
+  
+  #aboutMe p {
+    width: 40vw;
   }
 
   #designSubject {
@@ -616,4 +622,5 @@ body {
     letter-spacing: .2vw;
     font-size: 2.2vw;
   }
+  
 }
