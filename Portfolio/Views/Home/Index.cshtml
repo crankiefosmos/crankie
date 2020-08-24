@@ -37,13 +37,12 @@
             <span class="careerLink" style="animation-delay: 1s" onclick="scrollToElement('softwareTitle')">FULL STACK DEVELOPER</span> |
             <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineerTitle')">ENGINEER</span> |
             <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('leaderTitle')">LEADER</span> |
-            <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('artistTitle')">ARTIST</span>
+            <span class="careerLink" style="animation-delay: 1.6s" onclick="scrollToElement('artistTitle')">ARTIST</span>
         </h2>
         <p>
-            IThe oldest classical Greek and Latin writing had little or no space between words and could be written in
-            boustrophedon (alternating directions). Over time, text direction (left to right) became standardized, and
-            word dividers and terminal punctuation became common. The first way to divide sentences into groups was the
-            original parágraphos, similar to an underscore at the beginning of the new grou
+            With a degree in Mechanical Engineering (graduate Nov. 2020), over a year of experience writing clean, full
+            stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
+            to turn technical needs into efficient code and an intuitive and aesthetic user experience.
         </p>
     </div>
     <div id="intro-image-container"></div>
@@ -75,7 +74,7 @@
                     <div>
                         <p class="bullet">&#8226; Learning to write full stack code for data analysis and visualization</p>
                         <p class="bullet">&#8226; Developing front-end, user-oriented interfaces</p>
-                        <p class="bullet">&#8226; Debuging, maintaining, and improving self-documenting legacy code</p>
+                        <p class="bullet">&#8226; Debugging, maintaining, and improving self-documenting legacy code</p>
                         <p class="bullet">&#8226; Collaborating with a team of engineers to design unit-test software</p>
                     </div>
                 </div>
@@ -137,6 +136,7 @@
         <div class="career-row" id="engProjects">
             <h2>PROJECTS</h2>
             <div id="biaxialLink">BIAXIAL TENSILE TESTER</div>
+            <div id="scissorLink">SCISSOR LIFT</div>
             <div id="solarLink">SOLAR HEATED OVEN</div>
             <div style="margin-bottom: 0" id="marbleLink">MARBLE SORTER</div>
         </div>
@@ -145,10 +145,17 @@
             <div>
                 <h1 id="engineering">MECHANICAL ENGINEER</h1>
                 <h2>TEXAS A&M UNIVERSITY</h2>
-                <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-                    that gives as much to our users as it does to my fellow developers. Writing clean code means..</p>
-                <p class="bullet">&#8226; test</p>
-                <p>By the way, I designed and coded this very page without a template!</p>
+                <p>As a student in one of the top Mechanical Engineering programs in the country, I learn to combine
+                    the multi-disciplinary knowledge required of a mechanical engineer with the soft skills and 
+                    communication required to be part of an effective team. Several team projects, hands-on lab
+                    experience, and an extensive courseload have worked to shape me into the careful, logical, and 
+                    diligent engineer I am today. The subjects in which I excel most and have a strong interest include:</p>
+                <div id="engSubjects">
+                    <div class="engSubject">THERMODYNAMICS</div>
+                    <div class="engSubject">MATERIALS SCIENCE</div>
+                    <div class="engSubject">SOLAR ENERGY</div>
+                    <div class="engSubject" id="designSubject">MECHANICAL DESIGN</div>
+                </div>
             </div>
         </div>
     </div>
@@ -160,34 +167,42 @@
 
     <div style="margin-top: 5vh; padding: 5vh">
         <div id="leaderSection">
-            <div class="leaderRole">
+            <div class="leaderRole" id="buccRole">
                 <div id="buccPic" class="circleImg"></div>
                 <h1>BUCC BIG EVENT</h1>
                 <h2>President | Project ID</h2>
                 <p>
-                    Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
-                    here requires not only an ability to code but a working knowledge of mechanical engineering.
-                    As a softw
+                    A community outreach program in which I worked directly with the city of Brenham, Blinn College, and
+                    clients to complete 5 projects throughout the community. I supervised sites, executives, funding, and
+                    60 volunteers to complete all projects on time and under budget.
+                </p>
+                <p>
+                    More info can be found <a href="https://www.blinn.edu/news/2017/04/blinn-brenham-students-give-back-to-community-buccaneer-big-event.html" 
+                                              target="_blank" style="color: cornflowerblue; cursor: pointer">here</a>
                 </p>
             </div>
-            <div class="leaderRole">
+            <div class="leaderRole" id="barkRole">
                 <div id="barkPic" class="circleImg"></div>
                 <h1>BARK IN THE PARK</h1>
                 <H2>Co-founder | Executive</h2>
                 <p>
-                    Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
-                    here requires not only an ability to code but a working knowledge of mechanical engineering.
-                    As a softw
+                    A community outreach program which increased the local shelter's adoption rates by 30%. I managed all
+                    program aspects including operation, revenue, and volunteer acquisition for 1 year. The program was 
+                    praised by the Director of Environmental Health for Kerrville, Raymond Garcia, for its initiative and effectiveness.
+                </p>
+                <p>
+                    More info can be found at BITP's <a href="https://www.facebook.com/barkintheparkktx/" target="_blank">facebook</a>
                 </p>
             </div>
-            <div class="leaderRole">
+            <div class="leaderRole" id="mcRole">
                 <div id="mcPic" class="circleImg"></div>
                 <h1>McDONALDs</h1>
                 <H2>Manager</h2>
                 <p>
-                    Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
-                    here requires not only an ability to code but a working knowledge of mechanical engineering.
-                    As a softw
+                    As a manager I was tasked with leading a crew of around 15 people much older than myself in a fast-paced
+                    environment. This job required that I engage in conflict resolution with customers and co-workers almost
+                    everyday. I also trained around 20 new workers and ensured above-and-beyond customer service.
+
                 </p>
             </div>
 
@@ -218,9 +233,11 @@
                 </div>
             </div>
         </div>
-        <p>As a software developer at the ESL, I take great care in crafting efficient, readable code
-            that gives as much to our users as it does to my fellow developers. Writing clean code means..s a software
-            developer at the ESL, I take great care in crafting efficient, readable code that gives as much to our users as it does to my fellow developers. Writing clea
+        <p>
+            Being an artist has developed my creativity, refined my attention for detail, and increased my patience. 
+            While my drawings are realistic, I enjoy making simple graphics to capture complex ideas and I am currently
+            learning Adobe Illustrator to practice and create such works. My artistic approach towards websites is minimilist
+            with a desire to make software tools and technical matter pleasing to read and use.
         </p>
     </div>
 

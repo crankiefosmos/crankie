@@ -25,25 +25,32 @@ resizeElements = () => {
 $(document).ready(function () {resizeElements();})
 window.addEventListener('resize', resizeElements);
 
-var rows = ['softwareSection', 'engineeringSection', 'artistSection'];
+var rows = ['softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
 $(window).scroll(function () {
     if (rows.length < 1){
         $(this).off('scroll');
         return
     }
     let element = document.getElementById(rows[0]);
-    // var offset;
-    // switch (rows[0]) {
-    //     case "engineeringSection": 
-    //         offset = 1000; 
-    //         break;
-    //     case "artistSection": 
-    //         offset = 1600;
-    //         break;
-    //     default: 
-    //         offset = 400;
-    // }
-    if ($(window).scrollTop() > (element.getBoundingClientRect().top) ) {
+    var offset;
+    switch (rows[0]) {
+        case "engineeringSection": 
+            offset = 1000; 
+            break;
+        case 'leaderSection':
+            offset = 1700;
+            break;
+        case "artistSection": 
+            offset = 2800;
+            break;
+        default: 
+            offset = 200;
+    }
+    // var window = $(window).scrollTop();
+    // var top = element.getBoundingClientRect().top + offset;
+    
+    
+    if ($(window).scrollTop() > (element.getBoundingClientRect().top + offset) ) {
 
         slideCareer(rows[0]);
         $('#' + rows[0]).css('visibility', 'visible').hide().fadeIn(1500);
@@ -69,6 +76,8 @@ calculateScrollSpeed = (elementId) => {
     }
     return 3000
 }
+
+var leaderRoles = document.getElementsByClassName('leaderRole');
 
 slideCareer = (elementId) => {
     
@@ -113,6 +122,29 @@ slideCareer = (elementId) => {
                     }
                 });
             }, 1000);
+            
+            break;
+        case 'leaderSection':
+            
+            var wait = 0;
+            for (var i = 0; i < leaderRoles.length; i++){
+                setTimeout((function(e) {
+                    return function() {
+                        var id = '#' + leaderRoles[e].id;
+                        $(id).css('visibility', 'visible').hide().fadeIn(2500);
+                        $({x: -300}).animate({x: 0}, {
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function () {
+                                $(id).css({transform: 'translateX(' + this.x + 'px)'});
+                            }
+                        });
+                    }
+                })(i), wait);
+                
+                wait += 1000;
+            }
+            
             break;
         case 'artistSection':
             $({y: 200}).animate({y: 0}, {
@@ -123,15 +155,6 @@ slideCareer = (elementId) => {
                 }
             });
             break;
-        // case 'lookAtMe':
-        //     $({x: 200}).animate({x: 0}, {
-        //         duration: 2000,
-        //         easing: 'swing',
-        //         step: function () {
-        //             $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
-        //         }
-        //     });
-        //     break;
     }
     
 }
