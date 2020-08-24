@@ -1,5 +1,18 @@
 ﻿
 var screenWidth = window.innerWidth;
+var rows = ['softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
+var shouldScroll = true;
+var leaderRoles = document.getElementsByClassName('leaderRole');
+
+var biaxProj = document.getElementById('biaxialRender');
+var solarProj = document.getElementById('solarRender');
+var scisProj = document.getElementById('scissorRender');
+var marbProj = document.getElementById('marbleRender');
+
+var biaxHeader = document.getElementById('biaxialHeader');
+var solarHeader = document.getElementById('solarHeader');
+var scisHeader = document.getElementById('scissorHeader');
+var marbHeader = document.getElementById('marbleHeader');
 
 
 resizeElements = () => {
@@ -25,7 +38,7 @@ resizeElements = () => {
 $(document).ready(function () {resizeElements();})
 window.addEventListener('resize', resizeElements);
 
-var rows = ['softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
+
 $(window).scroll(function () {
     if (rows.length < 1){
         $(this).off('scroll');
@@ -77,7 +90,7 @@ calculateScrollSpeed = (elementId) => {
     return 3000
 }
 
-var leaderRoles = document.getElementsByClassName('leaderRole');
+
 
 slideCareer = (elementId) => {
     
@@ -160,8 +173,72 @@ slideCareer = (elementId) => {
 }
 
 
+openProjectModal = () => {
+    // document.body.className = 'blur-filter';
+    document.getElementById('projectModal').style.display = 'block';
+    
+};
+closeProjectModal = () => {
+    document.getElementById('projectModal').style.display = 'none';
+    // document.body.className = "";
+};
 
-var shouldScroll = true;
+showProject = (project) => {
+    biaxProj.style.display = 'none';
+    solarProj.style.display = 'none';
+    scisProj.style.display = 'none';
+    marbProj.style.display = 'none';
+    biaxHeader.style.color = 'black';
+    solarHeader.style.color = 'black';
+    scisHeader.style.color = 'black';
+    marbHeader.style.color = 'black';
+    
+    var highlight = "rgb(236, 178, 154)";
+    
+    switch (project) {
+        case 'biaxial':
+            biaxProj.style.display = 'flex';
+            biaxHeader.style.color = highlight;
+            break;
+        case 'solar':
+            solarProj.style.display = 'flex';
+            solarHeader.style.color = highlight;
+            break;
+        case 'scissor':
+            scisProj.style.display = 'flex';
+            scisHeader.style.color = highlight;
+            break;
+        case 'marble':
+            marbProj.style.display = 'flex';
+            marbHeader.style.color = highlight;
+            break
+        default:
+            biaxProj.style.display = 'flex';
+            biaxHeader.style.color = highlight;
+    }
+}
+
+$('#biaxialLink').click(function () {
+    openProjectModal();
+    showProject('biaxial');
+})
+
+$('#solarLink').click(function () {
+    openProjectModal();
+    showProject('solar');
+})
+
+$('#scissorLink').click(function () {
+    openProjectModal();
+    showProject('scissor');
+})
+
+$('#marbleLink').click(function () {
+    openProjectModal();
+    showProject('marble');
+})
+
+
 
 scrollArtLeft = () => {
     var firstChild = $('#slide-track div:first-child').clone();

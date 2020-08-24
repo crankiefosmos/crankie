@@ -12,6 +12,8 @@
     
     <style>
        
+       
+     
         
     </style>
     
@@ -50,7 +52,6 @@
 
 
 <div>
-    @* <div id="lookAtMe" class="circleImg"></div> *@
 
     <div id="softwareTitle" class="sectionTitle">
         <h1>DEVELOPER</h1>
@@ -258,14 +259,47 @@
                             <img class="modalImg" src="@piece.Directory" alt=""/>
                         </div>
                     }
-                    <div class="modalSlide">
-                        <img class="modalImg" src="../Style/Images/code.jpg" alt=""/>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<div id="projectModal" class="modal">
+    <span style="width: max-content; margin: auto; ">ENGINEERING PROJECTS</span>
+    <div id="closeProj" style="position: absolute; top: 5px; right: 5px;" onclick="closeProjectModal()">X</div>
+    <div id="projModalHeader">
+        <span id="biaxialHeader" onclick="showProject('biaxial')">BIAXIAL TENSILE TESTER</span>
+        <span id="solarHeader" onclick="showProject('solar')">SOLAR HEATED OVEN</span>
+        <span id="scissorHeader" onclick="showProject('scissor')">SCISSOR LIFT</span>
+        <span id="marbleHeader" onclick="showProject('marble')">MARBLE SORTER</span>
+    </div>
+    <div id="projRenderDiv">
+        <div id="biaxialRender" class="project">
+            biaxial test
+        </div>
+        <div id="solarRender" class="project">
+            solar test
+        </div>
+        <div id="scissorRender" class="project">
+            <img src="../Style/Images/scissor-lift-schem.jpg" />
+            <div>
+                The small scissor lift was designed with the objective of carrying at least 9kg of weight while remaining 
+                as light as possible. The lift came with several constraints such as weight, build time, max deflection, min and max height,
+                and how many parts could be 3D printed. <br/>
+                This lift was built by a team of four engineers. The aluminum-6061 legs and lead screw were machined while the
+                base and table were printed with a thermoplastic polymer. 
+            </div>
+        </div>
+        <div id="marbleRender" class="project">
+            marble test
+        </div>
+    </div>
+
+</div>
+
+
 </div>
 
 <script>

@@ -364,7 +364,7 @@ body {
   z-index: 4;
   padding-top: 20px;
   left: 0;
-  top: 0;
+  top: 50px;
   width: 100%;
   height: max-content;
 }
@@ -431,6 +431,62 @@ body {
 
 #closeArt:hover {
   opacity: 0.7;
+}
+
+/////// Project Modal /////////
+
+#projectModal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  padding-top: 20px;
+  left: 5vw;
+  top: 5vw;
+  width: 90vw;
+  height: max-content;
+  background-color: #fafafa;
+}
+
+#projModalHeader {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#projRenderDiv {
+  width: 80vw;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 2vw;
+}
+
+.project img {
+  width: 30vw;
+  height: 30vw;
+}
+
+.project div {
+  overflow-y: auto;
+  width: 40vw;
+  height: 30vw;
+  margin: 0 1vw;
+  padding: 1vw;
+  border: 1px solid black;
+  
+}
+
+#projectModal #closeProj, #projModalHeader span {
+  cursor: pointer;
+}
+
+.blur-filter {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
 }
 
 ///////  Leader ////////
