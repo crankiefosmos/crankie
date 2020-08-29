@@ -46,29 +46,64 @@ body {
 
 /////// Intro Section ////////
 
-#intro-section {
-  min-height: 80vh;
-}
-
 #nameSection {
-  height: 10vh;
-  background-color: #48666d;
-  padding: 1.2vw 3vw .3vw;
-  overflow-y: visible;
+  height: 0;
+  transform: translateY(-5vh);
+  padding-top: calc(3008 / 3682 * 100%);
+  background-image: url("../../Style/Images/me-denim.jpg");
+  background-size: 100% 100%;
   color: white;
+  position: relative;
 }
 
-#nameSection h1 {
-  width: max-content;
-  font-size: 6vw;
+#nameAndTitles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#nameAndTitles h1 {
+  width: 100%;
+  font-size: 6.5vw;
   letter-spacing: 1vw;
   font-weight: bold;
+  text-shadow: -.5vw .5vw 0 #e49b73, 
+                -1vw 1vw 0 #d06d50,
+                -1.5vw 1.5vw 0 #804949;
 }
 
-#nameSection h2 {
+#nameAndTitles div {
+  width: 33%;
+  padding-left: 15%;
+}
+
+#nameAndTitles h2 {
   cursor: context-menu;
-  font-size: 1.8vw;
+  font-size: 2.5vw;
   letter-spacing: 0.5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#nameAndTitles span {
+  width: max-content;
+  margin: 4% 0;
+}
+
+#nameAndTitles p {
+  width: 35%;
+  font-size: 15px;
+}
+
+#intro {
+  width: 60%;
+  margin: 3vh auto 8vh;
+  text-align: center;
+  font-size: 1.6vw;
 }
 
 @keyframes move-text {
@@ -83,22 +118,23 @@ body {
 }
 
 .careerLink:hover {
-  color: rgb(206, 87, 59);
+  color: #d06d50;
 }
 
-#nameSection p {
-  max-width: 80vw;
-  font-size: 15px;
+#developerLink {
+  padding-left: 0;
 }
 
-#intro-image-container {
-  height: 90vh;
-  //box-shadow: inset 0 30vh 20vh -8vh rgb(105, 123, 127);
-  //background-image: url("../../Style/Images/southwest-road.jpg");
-  //background-repeat: no-repeat;
-  //background-attachment: fixed;
-  //background-size: 100% 100%;
-  background-color: #48666d;
+#engineerLink{
+  padding-left: 33%;
+}
+
+#leaderLink{
+  padding-left: 66%;
+}
+
+#artistLink{
+  padding-left: 99%;
 }
 
 ///// Career Section /////////
@@ -443,8 +479,10 @@ body {
   left: 5vw;
   top: 5vw;
   width: 90vw;
-  height: max-content;
+  height: 80vh;
   background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
 }
 
 #projModalHeader {

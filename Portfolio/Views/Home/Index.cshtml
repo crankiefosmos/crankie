@@ -32,27 +32,34 @@
 </div>
 
 <div id="pageWrapper">
-<div id="intro-section" style="transform: translateY(-5vh)">
-    <div id="nameSection">
-        <h1>ISAIAH YOUNG</h1>
-        <h2>
-            <span class="careerLink" style="animation-delay: 1s" onclick="scrollToElement('softwareTitle')">FULL STACK DEVELOPER</span> |
-            <span class="careerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineerTitle')">ENGINEER</span> |
-            <span class="careerLink" style="animation-delay: 1.4s" onclick="scrollToElement('leaderTitle')">LEADER</span> |
-            <span class="careerLink" style="animation-delay: 1.6s" onclick="scrollToElement('artistTitle')">ARTIST</span>
-        </h2>
-        <p>
-            With a degree in Mechanical Engineering (graduate Nov. 2020), over a year of experience writing clean, full
-            stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
-            to turn technical needs into efficient code and an intuitive and aesthetic user experience.
-        </p>
+
+<div id="nameSection">
+    <div id="nameAndTitles">
+        <div style="margin-top: 8vh;">
+            <h1>ISAIAH YOUNG</h1>
+        </div>
+        <div style="margin-top: 2%">
+            <h2>
+                <span class="careerLink" id="developerLink" style="animation-delay: 1s" onclick="scrollToElement('softwareTitle')">DEVELOPER</span>
+                <span class="careerLink" id="engineerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineerTitle')">ENGINEER</span>
+                <span class="careerLink" id="leaderLink" style="animation-delay: 1.4s" onclick="scrollToElement('leaderTitle')">LEADER</span>
+                <span class="careerLink" id="artistLink" style="animation-delay: 1.6s" onclick="scrollToElement('artistTitle')">ARTIST</span>
+            </h2>
+        </div>
     </div>
-    <div id="intro-image-container"></div>
+</div>
+
+<div id="intro">
+    <p style="font-weight: bold">A LITTLE ABOUT ME</p>
+    <p>
+        With a degree in Mechanical Engineering, over a year of experience writing clean, full
+        stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
+        to turn technical needs into efficient code and an intuitive and aesthetic user experience.
+    </p>
 </div>
 
 
 <div>
-
     <div id="softwareTitle" class="sectionTitle">
         <h1>DEVELOPER</h1>
     </div>
@@ -267,7 +274,7 @@
 
 
 <div id="projectModal" class="modal">
-    <span style="width: max-content; margin: auto; ">ENGINEERING PROJECTS</span>
+    <p style="width: max-content; margin: auto; ">ENGINEERING PROJECTS</p>
     <div id="closeProj" style="position: absolute; top: 5px; right: 5px;" onclick="closeProjectModal()">X</div>
     <div id="projModalHeader">
         <span id="biaxialHeader" onclick="showProject('biaxial')">BIAXIAL TENSILE TESTER</span>

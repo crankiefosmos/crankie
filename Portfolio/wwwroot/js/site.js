@@ -282,7 +282,7 @@ scrollModalRight = () => {
 
 window.addEventListener('keydown', function(event){
     const direction = event.key;
-    if (artModal.style.display === "block"){
+    if (artModal?.style.display === "block"){
         switch (direction) {
             case "ArrowLeft":
                 scrollModalLeft();
@@ -343,7 +343,8 @@ window.onclick = function(event) {
 
 ///////////  Google Email Stuff ///////////
 
-(function() {
+var dataFilled;
+
     // get all data in form and return object
     function getFormData(form) {
         var elements = form.elements;
@@ -369,7 +370,6 @@ window.onclick = function(event) {
         var formData = {};
         fields.forEach(function(name){
             var element = elements[name];
-
             // singular form elements just have one value
             formData[name] = element.value;
 
@@ -384,6 +384,14 @@ window.onclick = function(event) {
                 }
                 formData[name] = data.join(', ');
             }
+            
+            if (formData[name] === "" ){
+                element.style.boxShadow = "0 0 6px #ff0000ad, inset 0 0 4px #719ECE " ;
+                dataFilled = false;
+            }
+            else {
+                element.style.boxShadow = "inset 0 0 4px #719ECE" ;
+            }
         });
 
         // add form-specific values into the data
@@ -396,9 +404,12 @@ window.onclick = function(event) {
     }
 
     function handleFormSubmit(event) {  // handles form submit without any jquery
+        
         event.preventDefault();           // we are submitting via xhr below
         var form = event.target;
         var formData = getFormData(form);
+        if (!dataFilled) {return alert("You missed a spot") }
+        
         var data = formData.data;
 
         // If a honeypot field is filled, assume it was done so by a spam bot.
@@ -415,11 +426,11 @@ window.onclick = function(event) {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 form.reset();
-                var formElements = form.querySelector(".form-elements")
+                var formElements = document.getElementById('emailInfo');
                 if (formElements) {
                     formElements.style.display = "none"; // hide form
                 }
-                var thankYouMessage = form.querySelector(".thankyou_message");
+                var thankYouMessage = document.getElementById('thankyou_message')
                 if (thankYouMessage) {
                     thankYouMessage.style.display = "block";
                 }
@@ -447,7 +458,16 @@ window.onclick = function(event) {
             buttons[i].disabled = true;
         }
     }
-})();
+
+    $('#clientName').keydown(function(){
+        document.getElementById('clientName').style.boxShadow = "inset 0 0 4px #719ECE";
+    });
+$('#clientAddress').keydown(function(){
+    document.getElementById('clientAddress').style.boxShadow = "inset 0 0 4px #719ECE";
+});
+$('#clientMessage').keydown(function(){
+    document.getElementById('clientMessage').style.boxShadow = "inset 0 0 4px #719ECE";
+});
 
 
 var TO_ADDRESS = "youngisa12@gmail.com";
