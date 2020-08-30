@@ -84,7 +84,7 @@ body {
 #nameAndTitles h2 {
   cursor: context-menu;
   font-size: 2.5vw;
-  letter-spacing: 0.5vw;
+  letter-spacing: .7vw;
   display: flex;
   flex-direction: column;
 }
@@ -97,28 +97,6 @@ body {
 #nameAndTitles p {
   width: 35%;
   font-size: 15px;
-}
-
-#intro {
-  width: 60%;
-  margin: 3vh auto 8vh;
-  text-align: center;
-  font-size: 1.6vw;
-}
-
-@keyframes move-text {
-  0% { bottom: -0.2em; opacity: 1; }
-  50% { bottom: 0.2em; }
-  100% { bottom: 0; opacity: 1; }
-}
-
-.careerLink span{
-  opacity: 0;
-  animation: move-text .8s forwards;
-}
-
-.careerLink:hover {
-  color: #d06d50;
 }
 
 #developerLink {
@@ -135,6 +113,35 @@ body {
 
 #artistLink{
   padding-left: 99%;
+}
+
+#developerLink:hover {
+  color: #b59191;
+}
+
+#engineerLink:hover {
+  color: #d06d50;
+}
+
+#leaderLink:hover {
+  color: #e49163;
+}
+
+#artistLink:hover {
+  color: #ffc19f;
+}
+
+#intro {
+  width: 60%;
+  margin: 3vh auto 8vh;
+  text-align: center;
+  font-size: 1.6vw;
+}
+
+#intro div {
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,.2);
+  border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
 ///// Career Section /////////
@@ -274,7 +281,6 @@ body {
 }
 
 #artistSection p {
-  margin: auto;
   width: 75vw;
 }
 
@@ -477,12 +483,19 @@ body {
   z-index: 4;
   padding-top: 20px;
   left: 5vw;
-  top: 5vw;
+  top: 7vh;
   width: 90vw;
-  height: 80vh;
+  height: 85vh;
   background-color: #fafafa;
+  border: 1px solid rgba(0,0,0,.1);
   border-radius: 10px;
   box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+}
+
+#closeProj {
+  position: absolute; 
+  top: 5px; 
+  right: 15px;
 }
 
 #projModalHeader {
@@ -500,19 +513,60 @@ body {
   padding: 2vw;
 }
 
-.project img {
-  width: 30vw;
-  height: 30vw;
+.project {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
-.project div {
-  overflow-y: auto;
-  width: 40vw;
-  height: 30vw;
-  margin: 0 1vw;
+.projImg {
+  height: 0;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-top: calc(394 / 512 * 100%);
+  background-size: 100% 100%;
+}
+
+#scissorImg{
+  background-image: url("../../Style/Images/scissor-lift-schem.jpg");
+}
+
+.projTextWrapper {
+  width: 35%;
+  height: 60vh;
   padding: 1vw;
-  border: 1px solid black;
+  border: 1px solid hsla(0,0%,100%,.7);
+  border-radius: 10px;
+  box-shadow: inset  0 0 12px -1px rgba(0,0,0,.1)
+}
+
+.projText {
+  overflow-y: auto;
+  width: 35%;
+  height: 60vh;
+  padding: 1vw;
+  border: 1px solid hsla(0,0%,100%,.7);
+  border-radius: 10px;
+  box-shadow: inset  0 0 12px -1px rgba(0,0,0,.1)
+}
+
+.projText::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projText::-webkit-scrollbar-track {
+  color: inherit;
+  border: solid 3px transparent;
   
+}
+
+.projText::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(0,0,0,.1);
+  border: solid 3px transparent;
 }
 
 #projectModal #closeProj, #projModalHeader span {
@@ -520,11 +574,12 @@ body {
 }
 
 .blur-filter {
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);
-  filter: blur(2px);
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  background-color: #8e8c8c;
 }
 
 ///////  Leader ////////
@@ -681,10 +736,154 @@ body {
   animation: scroll-left-me 2s;
 }
 
+//////////// Contact //////////////
+
+.contactIcon {
+  height: 2vw;
+  width: 2vw;
+  transform: translateX(-1vw);
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+
+#linkedIn:hover {
+  cursor: pointer;
+}
+
+
+#lookAtMe {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+}
+
+#emailFieldsetWrapper {
+  display: flex;
+  justify-content: space-around;
+  height: max-content;
+  width: 70vw;
+  margin-top: 15vh;
+}
+
+#emailFieldset {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  overflow: visible;
+  padding: 30px;
+  border: 1px solid #f1f1f1;
+  background-color: #ffffffb9;
+  border-radius: 12px;
+  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+}
+
+#emailFieldset div {
+  margin: 12px 0;
+
+}
+
+#emailFieldset label {
+  font-weight: bold;
+  width: 25%;
+}
+
+
+#emailFieldset .clientInput, textarea {
+  border: 1px solid #00000061;
+  border-radius: 3px;
+  width: 65%;
+  min-width: 220px;
+  margin: 10px 0;
+  box-shadow: inset 0 0 3px #719ECE;
+  padding: 5px;
+}
+
+.clientInput:focus, textarea:focus {
+  outline: none !important;
+  border: 1px solid blue;
+
+}
+
+#emailFieldset textarea {
+  width: 480px !important;
+  height: 200px;
+  max-width: 100%;
+}
+
+#sendEmail {
+  border: 1px solid #00000061;
+  border-radius: 5px;
+  padding: 8px 15px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  margin: 12px auto 0;
+  cursor: pointer;
+  background-color: #000000b9;
+  color: white;
+}
+
+#getInTouchWrapper {
+  border: none;
+  margin-top: 60px;
+  z-index: 3;
+  font-weight: bold;
+  position: relative;
+  height: 335px;
+  width: 30vw;
+  background-color: #ffffffb9;
+  border-radius: 12px;
+  color: #000000b9;
+  box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+}
+
+#getInTouch {
+  color: white;
+  margin: 20px 50px 0;
+  width: 10px;
+  transform: translateX(-60px);
+}
+
+#getInTouch h1 {
+  font-size: 65px;
+  letter-spacing: 18px;
+  font-weight: bold;
+  line-height: 158px;
+}
 
 
 
-@media screen and (max-width: 800px) {
+#contactInfo {
+  font-size: 1.5vw;
+  letter-spacing: .15vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 60px;
+  justify-content: space-around;
+  width: max-content;
+  margin: auto;
+}
+
+#thankyou_message {
+  font-size: 1.5vw;
+  letter-spacing: .15vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  font-weight: bold;
+  height: 90%;
+}
+
+#thankyou_message p {
+  width: 80%;
+  margin: auto;
+}
+
+
+@media screen and (max-width: 850px) {
   #engineerTitle h1 {
     font-size: 12vh;
     letter-spacing: 5vh;
@@ -717,4 +916,7 @@ body {
     font-size: 2.2vw;
   }
   
+  #contactInfo {
+    font-size: 1.8vw;
+  }
 }

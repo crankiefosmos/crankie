@@ -81,13 +81,19 @@ calculateScrollSpeed = (elementId) => {
     var elmntToScrollTo = document.getElementById(elementId);
     var nameSection = document.getElementById('nameSection');
     var test = (elmntToScrollTo.getBoundingClientRect().top - nameSection.getBoundingClientRect().top);
-    if (test < 500){
-        return 1000
-    }
-    else if (test < 1000){
+    debugger;
+    if (test < 1200){
         return 2000
     }
-    return 3000
+    else if (test < 2200){
+        return 3000
+    }
+    else if (test < 3200){
+        return 3000
+    }
+    
+    return 4000
+    
 }
 
 
@@ -174,13 +180,13 @@ slideCareer = (elementId) => {
 
 
 openProjectModal = () => {
-    // document.body.className = 'blur-filter';
+    document.getElementById('pageWrapper').className = 'blur-filter';
     document.getElementById('projectModal').style.display = 'block';
     
 };
 closeProjectModal = () => {
     document.getElementById('projectModal').style.display = 'none';
-    // document.body.className = "";
+    document.getElementById('pageWrapper').className = '';
 };
 
 showProject = (project) => {

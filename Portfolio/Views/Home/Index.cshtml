@@ -10,13 +10,6 @@
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="js/site.js"></script>
     
-    <style>
-       
-       
-     
-        
-    </style>
-    
 </head>
 
 <body style="background-color: #fafafa; height: max-content">
@@ -38,7 +31,7 @@
         <div style="margin-top: 8vh;">
             <h1>ISAIAH YOUNG</h1>
         </div>
-        <div style="margin-top: 2%">
+        <div>
             <h2>
                 <span class="careerLink" id="developerLink" style="animation-delay: 1s" onclick="scrollToElement('softwareTitle')">DEVELOPER</span>
                 <span class="careerLink" id="engineerLink" style="animation-delay: 1.2s" onclick="scrollToElement('engineerTitle')">ENGINEER</span>
@@ -51,15 +44,17 @@
 
 <div id="intro">
     <p style="font-weight: bold">A LITTLE ABOUT ME</p>
-    <p>
-        With a degree in Mechanical Engineering, over a year of experience writing clean, full
-        stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
-        to turn technical needs into efficient code and an intuitive and aesthetic user experience.
-    </p>
+    <div>
+        <p>
+            With a degree in Mechanical Engineering, over a year of experience writing clean, full
+            stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
+            to turn technical needs into efficient code and an intuitive and aesthetic user experience. For example,
+            this very website was coded from scratch and without a template by yours truly!
+        </p>
+    </div>
 </div>
 
 
-<div>
     <div id="softwareTitle" class="sectionTitle">
         <h1>DEVELOPER</h1>
     </div>
@@ -221,23 +216,24 @@
         <h1>ARTIST</h1>
     </div>
 
-    <div class="career-row" id="artistSection">
-        <div id="slider">
-            <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
-            <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
-            <div style="overflow: hidden">
-                <div id="slide-track">
+<div class="career-row" id="artistSection">
+    <div id="slider">
+        <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
+        <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
+        <div style="overflow: hidden">
+            <div id="slide-track">
 
-                    @foreach (var piece in Model)
-                    {
-                        <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
-                            <img class="slideImg" src="@piece.Directory" alt=""/>
-                        </div>
+                @foreach (var piece in Model)
+                {
+                    <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="@piece.Directory" alt=""/>
+                    </div>
 
-                    }
-                </div>
+                }
             </div>
         </div>
+    </div>
+    <div style="padding: 5px; width: max-content; margin: auto; border-top: 1px solid rgba(0,0,0,.2); border-bottom: 1px solid rgba(0,0,0,.2);">
         <p>
             Being an artist has developed my creativity, refined my attention for detail, and increased my patience. 
             While my drawings are realistic, I enjoy making simple graphics to capture complex ideas and I am currently
@@ -245,11 +241,9 @@
             with a desire to make software tools and technical matter pleasing to read and use.
         </p>
     </div>
-
 </div>
 
-
-
+</div>
 
 
 <div id="artModal" class="modal">
@@ -274,30 +268,34 @@
 
 
 <div id="projectModal" class="modal">
-    <p style="width: max-content; margin: auto; ">ENGINEERING PROJECTS</p>
-    <div id="closeProj" style="position: absolute; top: 5px; right: 5px;" onclick="closeProjectModal()">X</div>
+    <p style="width: max-content; margin: 0 auto 20px; color: #989898 ">ENGINEERING PROJECTS</p>
+    <div id="closeProj" onclick="closeProjectModal()">X</div>
     <div id="projModalHeader">
         <span id="biaxialHeader" onclick="showProject('biaxial')">BIAXIAL TENSILE TESTER</span>
-        <span id="solarHeader" onclick="showProject('solar')">SOLAR HEATED OVEN</span>
         <span id="scissorHeader" onclick="showProject('scissor')">SCISSOR LIFT</span>
+        <span id="solarHeader" onclick="showProject('solar')">SOLAR HEATED OVEN</span>
         <span id="marbleHeader" onclick="showProject('marble')">MARBLE SORTER</span>
     </div>
     <div id="projRenderDiv">
         <div id="biaxialRender" class="project">
             biaxial test
         </div>
-        <div id="solarRender" class="project">
-            solar test
-        </div>
         <div id="scissorRender" class="project">
-            <img src="../Style/Images/scissor-lift-schem.jpg" />
-            <div>
-                The small scissor lift was designed with the objective of carrying at least 9kg of weight while remaining 
+       
+            <div style="width: 50%;">
+                <div class="projImg" id="scissorImg"></div>
+            </div>
+
+            <div class="projText">
+                The small scissor lift was designed with the objective of carrying at least 9kg of weight while remaining
                 as light as possible. The lift came with several constraints such as weight, build time, max deflection, min and max height,
                 and how many parts could be 3D printed. <br/>
                 This lift was built by a team of four engineers. The aluminum-6061 legs and lead screw were machined while the
-                base and table were printed with a thermoplastic polymer. 
+                base and table were printed with a thermoplastic polymer.
             </div>
+        </div>
+        <div id="solarRender" class="project">
+            solar test
         </div>
         <div id="marbleRender" class="project">
             marble test
@@ -307,7 +305,7 @@
 </div>
 
 
-</div>
+
 
 <script>
 (function(){
