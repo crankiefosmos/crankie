@@ -72,8 +72,8 @@ body {
   letter-spacing: 1vw;
   font-weight: bold;
   color: transparent;
-  animation: fade-in-name 1.2s linear .25s forwards;
-  -webkit-animation: fade-in-name 1.2s linear .25s forwards;
+  animation: fade-in-name 1.2s linear .6s forwards;
+  -webkit-animation: fade-in-name 1.2s linear .6s forwards;
 }
 
 @keyframes fade-in-name {
@@ -208,7 +208,6 @@ body {
 }
 
 .career-row {
-  visibility: hidden;
   max-width: 93vw;
   padding: 6vh 3vw;
   margin: 20px;
@@ -658,11 +657,9 @@ body {
   display: flex; 
   flex-wrap: wrap;
   flex-direction: row;
-  will-change: transform, opacity;
 }
 
 .leaderRole {
-  visibility: hidden;
   width: 30%;
   min-width: 350px;
   margin: 0 auto 10vh;
@@ -870,6 +867,9 @@ body {
   background-color: #ffffffb9;
   border-radius: 12px;
   box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+  opacity: 0;
+  animation: contact 1.85s ease-in-out 3.2s forwards;
+  -webkit-animation: contact 1.85s ease-in-out 3.2s forwards;
 }
 
 #emailFieldset div {
@@ -931,23 +931,30 @@ body {
   border-radius: 12px;
   color: #000000b9;
   box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
+  opacity: 0;
+  animation: contact 1.85s ease-in-out 2.2s forwards;
+  -webkit-animation: contact 1.85s ease-in-out 2.2s forwards;
 }
 
 #getInTouch {
   color: white;
   margin: 20px 50px 0;
   width: 10px;
+  display: flex;
+  flex-direction: column;
   transform: translateX(-60px);
 }
 
-#getInTouch h1 {
+
+#getInTouch span {
+  margin: 4.7vh;
   font-size: 65px;
   letter-spacing: 18px;
+  opacity: 0;
   font-weight: bold;
-  line-height: 158px;
+  animation: get-in-touch .85s ease-in-out forwards;
+  -webkit-animation: get-in-touch .85s ease-in-out forwards;
 }
-
-
 
 #contactInfo {
   font-size: 1.5vw;
@@ -976,6 +983,102 @@ body {
   margin: auto;
 }
 
+//// contact animations /////
+
+@keyframes get-in-touch {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+}
+
+@keyframes contact {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+////// animations /////////
+
+.show-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+#intro {
+  transform: translateY(100px);
+  transition: transform 2s .25s ease-in-out, opacity 2s .25s ease-in-out;
+}
+
+#softwareSection {
+  transform: translateX(200px);
+  transition: transform 2s 1.25s ease-in-out, opacity 2s 1.25s ease-in-out;
+}
+
+#softwareSkills {
+  z-index: 2;
+  transform: translateX(200px);
+  transition: transform 2s .25s ease-in-out, opacity 2s .25s ease-in-out;
+}
+
+#engProjects {
+  z-index: 2;
+  transform: translateX(-200px);
+  transition: transform 2s .25s ease-in-out, opacity 2s .25s ease-in-out;
+}
+
+#engineeringSection {
+  transform: translateX(-200px);
+  transition: transform 2s 1.25s ease-in-out, opacity 2s 1.25s ease-in-out;
+}
+
+#buccRole {
+  transform: translateX(-200px);
+  transition: transform 2s .25s ease-in-out, opacity 2s .25s ease-in-out;
+}
+
+#barkRole {
+  transform: translateX(-200px);
+  transition: transform 2s 1.25s ease-in-out, opacity 2s 1.25s ease-in-out;
+}
+
+#mcRole {
+  transform: translateX(-200px);
+  transition: transform 2s 2.25s ease-in-out, opacity 2s 2.25s ease-in-out;
+}
+
+#artistSection {
+  transform: translateY(100px);
+  transition: transform 2s .25s ease-in-out, opacity 2s .25s ease-in-out;
+}
+
+
+/// once in viewport ///
+
+#intro.is-visible,
+#softwareSection.is-visible,
+#softwareSkills.is-visible,
+#engProjects.is-visible,
+#engineeringSection.is-visible,
+#buccRole.is-visible,
+#barkRole.is-visible,
+#mcRole.is-visible,
+#artistSection.is-visible
+{
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 @media screen and (max-width: 850px) {
   #engineerTitle h1 {
@@ -987,7 +1090,7 @@ body {
     font-size: 12vh;
     letter-spacing: 5vh;
   }
-  
+
   #aboutMe p {
     width: 40vw;
   }
@@ -1005,45 +1108,50 @@ body {
     letter-spacing: .2vw;
     font-size: 2.2vw;
   }
-  
+
   #contactInfo {
     font-size: 2.1vw;
   }
-  
+
   #contactInfo span {
     margin: 2vh auto 0;
     display: flex;
     flex-direction: column;
     transform: none;
   }
-  
+
   #contactInfo img {
     margin: 1vh auto -15px;
     transform: none;
   }
-  
+
   #phoneNumber {
     transform: none;
   }
-  
+
   #phoneNumber img {
     transform: none;
   }
-  
-}
 
-//#intro {
-//  animation: slide-intro 1s linear infinite;
-//  animation-play-state: paused;
-//  animation-delay: calc(var(--scroll) * -1s);
-//  animation-iteration-count: 1;
-//  animation-fill-mode: both;
-//}
-//
-//////////// Goofin //////////
-//
-//@keyframes slide-intro {
-//  to {
-//    transform: translateY(-200px);
-//  }
-//}
+  .skillLevel {
+    display: none;
+  }
+
+  .skillLevel span {
+    float: none;
+  }
+
+  #softwareSkills {
+    text-align: center;
+    padding: 6vh;
+  }
+
+  #barkRole, #mcRole {
+    transition-delay: .25s;
+  }
+
+  #thankyou_message {
+    font-size: 2.5vw;
+    letter-spacing: .2vw;
+  }
+}

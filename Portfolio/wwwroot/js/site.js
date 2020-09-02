@@ -1,87 +1,54 @@
 ﻿
-var screenWidth = window.innerWidth;
-var rows = ['intro', 'softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
-var shouldScroll = true;
-var leaderRoles = document.getElementsByClassName('leaderRole');
-
+var artModal = document.getElementById("artModal");
+var modalImgWidth = -600;
 var biaxProj = document.getElementById('biaxialRender');
 var solarProj = document.getElementById('solarRender');
 var scisProj = document.getElementById('scissorRender');
 var marbProj = document.getElementById('marbleRender');
-
 var biaxHeader = document.getElementById('biaxialHeader');
 var solarHeader = document.getElementById('solarHeader');
 var scisHeader = document.getElementById('scissorHeader');
 var marbHeader = document.getElementById('marbleHeader');
 
+var shouldScroll = true;
 
-resizeElements = () => {
-    var skillLevels = $('.skillLevel');
-    var skills = $('.skillLevel span');
-    var skillSet = $('#softwareSkills');
-    var atest = skillSet.width();
+
+/// animate sections ////
+
+var scroll = window.requestAnimationFrame;
+var elementsToShow = document.querySelectorAll('.show-on-scroll');
+
+function loop() {
     
-    if (skillSet.width() > 250) {
-        skillLevels.css('display', 'block');
-        skills.css('float', 'left');
-        skillSet.css('text-align', 'left')
-        skillSet.css('padding', '6vh 5vw');
-    }
-    else {
-        skillLevels.css('display', 'none');
-        skills.css('float', 'none');
-        skillSet.css('text-align', 'center');
-        skillSet.css('padding', '6vh');
-    }
+    elementsToShow.forEach(function (element) {
+        if (isElementInViewport(element)) {
+            element.classList.add('is-visible'); 
+        }
+    });
+    
+    scroll(loop);
 }
 
-$(document).ready(function () {
-    resizeElements();    
-})
-
-
-window.addEventListener('resize', resizeElements);
-
-window.addEventListener('scroll', () => {
-    document.body.style.setProperty('--scroll',(window.pageYOffset / (document.body.offsetHeight - window.innerHeight)).toString());
-}, false);
-
-$(window).scroll(function () {
-    if (rows.length < 1){
-        $(this).off('scroll');
-        return
+function isElementInViewport(el) {
+    if (typeof jQuery === "function" && el instanceof jQuery){
+        el = el[0];
     }
-    let element = document.getElementById(rows[0]);
-    var offset;
-    switch (rows[0]) {
-        case "intro":
-            offset = -200;
-            break;
-        case "engineeringSection":
-            offset = 2200; 
-            break;
-        case 'leaderSection':
-            offset = 2900;
-            break;
-        case "artistSection": 
-            offset = 3900;
-            break;
-        default: 
-            offset = 1100;
-    }
-    
-    if (screenWidth < 1000 && rows[0] !== 'intro'){
-        offset -= 600;
-    }
-    
-    
-    if ($(window).scrollTop() > (element.getBoundingClientRect().top + offset) ) {
+    var rect = el.getBoundingClientRect();
+    return (
+        (rect.top <= 0 && rect.bottom >= 0) ||
+    (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) 
+        && rect.top <= (window.innerHeight || document.documentElement.clientHeight)) ||
+        (rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+    );
+}
 
-        slideSection(rows[0]);
-        $('#' + rows[0]).css('visibility', 'visible').hide().fadeIn(1500);
-        rows.splice(0, 1);
-    }
-});
+loop();
+
+
+
+
+
+///// menu scroll /////
 
 function scrollToElement(elementId) {
     var speed = calculateScrollSpeed(elementId);
@@ -110,106 +77,10 @@ calculateScrollSpeed = (elementId) => {
 
 
 
-slideSection = (elementId) => {
 
-    document.getElementById(elementId).style.willChange = "transform, opacity";
-    
-    switch (elementId) {
-        case 'intro':
-            $({y: 200}).animate({y: 0}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $('#' + elementId).css({transform: 'translateY(' + this.y + 'px)'});
-                }
-            });
-            break;
-        case 'softwareSection':
-            $({x: -200}).animate({x: 0}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
-                }
-            });
-            
-            document.getElementById('softwareSkills').style.willChange = "transform, opacity";
-            setTimeout(function() {
-            $('#softwareSkills').css('visibility', 'visible').hide().fadeIn(2500);
-            $({x: -400}).animate({x: 0}, {
-                duration: 3000,
-                easing: 'swing',
-                step: function () {
-                    $('#softwareSkills').css({transform: 'translateX(' + this.x + 'px)'});
-                }
-            });
-            }, 1000);
-            document.getElementById('softwareSkills').style.willChange = "";
-            break;
-            
-        case 'engineeringSection':
-            $({x: 200}).animate({x: 0}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
-                }
-            });
-            
-            document.getElementById('engProjects').style.willChange = "transform, opacity";
-            setTimeout(function() {
-                $('#engProjects').css('visibility', 'visible').hide().fadeIn(2500);
-                $({x: 400}).animate({x: 0}, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function () {
-                        $('#engProjects').css({transform: 'translateX(' + this.x + 'px)'});
-                    }
-                });
-            }, 1000);
-            document.getElementById('engProjects').style.willChange = "";
-            
-            break;
-        case 'leaderSection':
-            
-            var wait = 0;
-            for (var i = 0; i < leaderRoles.length; i++){
-                setTimeout((function(e) {
-                    return function() {
-                        var id = '#' + leaderRoles[e].id;
-                        
-                        $(id).css('will-change', 'transform, opacity');
-                        $(id).css('visibility', 'visible').hide().fadeIn(2500);
-                        $({x: -300}).animate({x: 0}, {
-                            duration: 2000,
-                            easing: 'swing',
-                            step: function () {
-                                $(id).css({transform: 'translateX(' + this.x + 'px)'});
-                            }
-                        });
-                        $(id).css('will=change', '');
-                    }
-                })(i), wait);
-                
-                wait += 1000;
-            }
-            
-            break;
-        case 'artistSection':
-            $({y: 200}).animate({y: 0}, {
-                duration: 2000,
-                easing: 'swing',
-                step: function () {
-                    $('#' + elementId).css({transform: 'translateY(' + this.y + 'px)'});
-                }
-            });
-            break;
-    }
-    
-    document.getElementById(elementId).style.willChange = "";
-    
-}
 
+
+//// project modal //////
 
 openProjectModal = () => {
     document.getElementById('pageWrapper').className = 'blur-filter';
@@ -277,6 +148,11 @@ $('#marbleLink').click(function () {
 })
 
 
+
+
+
+
+//// art section and modal ////////
 
 scrollArtLeft = () => {
     var firstChild = $('#slide-track div:first-child').clone();
@@ -353,9 +229,6 @@ $('#scrollArtRight').click(scrollArtRight);
 $('#scrollModalLeft').click(scrollModalLeft);
 $('#scrollModalRight').click(scrollModalRight);
 
-var artModal = document.getElementById("artModal");
-
-var modalImgWidth = -600;
 getFirstPieceToShow =(initialPieceName)=> {
     var artPieceIds = $('#modal-slide-track').children().map(function () {return this.id;});
     // the below code shouldn't be necessary but for some reason the indexOf function is not working on this string array
@@ -379,6 +252,8 @@ window.onclick = function(event) {
         artModal.style.display = "none";
     }
 }
+
+
 
 
 ///////////  Google Email Stuff ///////////
