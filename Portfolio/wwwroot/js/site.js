@@ -1,6 +1,6 @@
 ﻿
 var screenWidth = window.innerWidth;
-var rows = ['softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
+var rows = ['intro', 'softwareSection', 'engineeringSection', 'leaderSection', 'artistSection'];
 var shouldScroll = true;
 var leaderRoles = document.getElementsByClassName('leaderRole');
 
@@ -35,9 +35,16 @@ resizeElements = () => {
     }
 }
 
-$(document).ready(function () {resizeElements();})
+$(document).ready(function () {
+    resizeElements();    
+})
+
+
 window.addEventListener('resize', resizeElements);
 
+window.addEventListener('scroll', () => {
+    document.body.style.setProperty('--scroll',(window.pageYOffset / (document.body.offsetHeight - window.innerHeight)).toString());
+}, false);
 
 $(window).scroll(function () {
     if (rows.length < 1){
@@ -47,25 +54,30 @@ $(window).scroll(function () {
     let element = document.getElementById(rows[0]);
     var offset;
     switch (rows[0]) {
-        case "engineeringSection": 
-            offset = 1000; 
+        case "intro":
+            offset = -200;
+            break;
+        case "engineeringSection":
+            offset = 2200; 
             break;
         case 'leaderSection':
-            offset = 1700;
+            offset = 2900;
             break;
         case "artistSection": 
-            offset = 2800;
+            offset = 3900;
             break;
         default: 
-            offset = 200;
+            offset = 1100;
     }
-    // var window = $(window).scrollTop();
-    // var top = element.getBoundingClientRect().top + offset;
+    
+    if (screenWidth < 1000 && rows[0] !== 'intro'){
+        offset -= 600;
+    }
     
     
     if ($(window).scrollTop() > (element.getBoundingClientRect().top + offset) ) {
 
-        slideCareer(rows[0]);
+        slideSection(rows[0]);
         $('#' + rows[0]).css('visibility', 'visible').hide().fadeIn(1500);
         rows.splice(0, 1);
     }
@@ -98,9 +110,20 @@ calculateScrollSpeed = (elementId) => {
 
 
 
-slideCareer = (elementId) => {
+slideSection = (elementId) => {
+
+    document.getElementById(elementId).style.willChange = "transform, opacity";
     
     switch (elementId) {
+        case 'intro':
+            $({y: 200}).animate({y: 0}, {
+                duration: 2000,
+                easing: 'swing',
+                step: function () {
+                    $('#' + elementId).css({transform: 'translateY(' + this.y + 'px)'});
+                }
+            });
+            break;
         case 'softwareSection':
             $({x: -200}).animate({x: 0}, {
                 duration: 2000,
@@ -110,6 +133,7 @@ slideCareer = (elementId) => {
                 }
             });
             
+            document.getElementById('softwareSkills').style.willChange = "transform, opacity";
             setTimeout(function() {
             $('#softwareSkills').css('visibility', 'visible').hide().fadeIn(2500);
             $({x: -400}).animate({x: 0}, {
@@ -120,8 +144,9 @@ slideCareer = (elementId) => {
                 }
             });
             }, 1000);
-            
+            document.getElementById('softwareSkills').style.willChange = "";
             break;
+            
         case 'engineeringSection':
             $({x: 200}).animate({x: 0}, {
                 duration: 2000,
@@ -130,7 +155,8 @@ slideCareer = (elementId) => {
                     $('#' + elementId).css({transform: 'translateX(' + this.x + 'px)'});
                 }
             });
-
+            
+            document.getElementById('engProjects').style.willChange = "transform, opacity";
             setTimeout(function() {
                 $('#engProjects').css('visibility', 'visible').hide().fadeIn(2500);
                 $({x: 400}).animate({x: 0}, {
@@ -141,6 +167,7 @@ slideCareer = (elementId) => {
                     }
                 });
             }, 1000);
+            document.getElementById('engProjects').style.willChange = "";
             
             break;
         case 'leaderSection':
@@ -150,6 +177,8 @@ slideCareer = (elementId) => {
                 setTimeout((function(e) {
                     return function() {
                         var id = '#' + leaderRoles[e].id;
+                        
+                        $(id).css('will-change', 'transform, opacity');
                         $(id).css('visibility', 'visible').hide().fadeIn(2500);
                         $({x: -300}).animate({x: 0}, {
                             duration: 2000,
@@ -158,6 +187,7 @@ slideCareer = (elementId) => {
                                 $(id).css({transform: 'translateX(' + this.x + 'px)'});
                             }
                         });
+                        $(id).css('will=change', '');
                     }
                 })(i), wait);
                 
@@ -175,6 +205,8 @@ slideCareer = (elementId) => {
             });
             break;
     }
+    
+    document.getElementById(elementId).style.willChange = "";
     
 }
 
@@ -296,6 +328,8 @@ window.addEventListener('keydown', function(event){
             case "ArrowRight":
                 scrollModalRight();
                 break;
+            case "Escape":
+                artModal.style.display = "none";
         }
     }
     else{
@@ -396,7 +430,7 @@ var dataFilled;
                 dataFilled = false;
             }
             else {
-                element.style.boxShadow = "inset 0 0 4px #719ECE" ;
+                dataFilled = true;
             }
         });
 
@@ -465,9 +499,12 @@ var dataFilled;
         }
     }
 
-    $('#clientName').keydown(function(){
-        document.getElementById('clientName').style.boxShadow = "inset 0 0 4px #719ECE";
-    });
+    
+    
+    
+$('#clientName').keydown(function(){
+    document.getElementById('clientName').style.boxShadow = "inset 0 0 4px #719ECE";
+});
 $('#clientAddress').keydown(function(){
     document.getElementById('clientAddress').style.boxShadow = "inset 0 0 4px #719ECE";
 });
