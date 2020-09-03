@@ -580,16 +580,19 @@ body {
 
 #marbleImg{
   background-image: url("../../Style/Images/scissor-lift-schem.jpg");
-  
+  padding-top: calc(240 / 282 * 100%);
 }
 
 #solarImg{
-  background-image: url("../../Style/Images/scissor-lift-schem.jpg");
+  background-image: url("../../Style/Images/solar.jpg");
+  padding-top: calc(240 / 282 * 90%);
+  width: 90%;
 }
 
 #biaxialImg{
   background-image: url("../../Style/Images/biaxial.gif");
-  padding-top: calc(582 / 717 * 100%);
+  padding-top: calc(582 / 717 * 92%);
+  width: 92%
 }
 
 .projTextWrapper {
