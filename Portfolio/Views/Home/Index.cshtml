@@ -1,15 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Isaiah Young";
 }
-@model List<ArtGallery>
 
 <meta name=”viewport” content=”width=device-width, initial-scale=1″>
 
 <head>
     <link rel="stylesheet" type="text/css" href="~/Style/CSS/Main.css">
-    <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="js/site.js"></script>
-    
 </head>
 
 <body style="background-color: #fafafa; height: max-content">
@@ -224,13 +220,36 @@
         <div style="overflow: hidden">
             <div id="slide-track">
 
-                @foreach (var piece in Model)
-                {
-                    <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)">
-                        <img class="slideImg" src="@piece.Directory" alt=""/>
-                    </div>
+@*                 @foreach (var piece in Model) *@
+@*                 { *@
+@*                     <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)"> *@
+@*                         <img class="slideImg" src="@piece.Directory" alt=""/> *@
+@*                     </div> *@
+@* *@
+@*                 } *@
+                
+                <div id="Tiger" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Tiger.jpg" alt=""/>
+                </div>
+                <div id="Jaguar" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Jaguar.jpg" alt=""/>
+                </div>
+                <div id="Skull" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Skull.jpg" alt=""/>
+                </div>
+                <div id="Davy" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Davy.jpg" alt=""/>
+                </div>
+                <div id="Wren" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Wren.jpg" alt=""/>
+                </div>
+                <div id="Mackys" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Mackys.jpg" alt=""/>
+                </div>
+                <div id="Henry" class="slide" onclick="showArtModal(this.id)">
+                    <img class="slideImg" src="../Style/Images/Henry.jpg" alt=""/>
+                </div>
 
-                }
             </div>
         </div>
     </div>
@@ -255,12 +274,34 @@
             <button id="scrollModalRight" class="scrollArtButton">&#62;</button>
             <div style="overflow: hidden">
                 <div id="modal-slide-track">
-                    @foreach (var piece in Model)
-                    {
-                        <div id=@piece.Name class="modalSlide">
-                            <img class="modalImg" src="@piece.Directory" alt=""/>
-                        </div>
-                    }
+@*                     @foreach (var piece in Model) *@
+@*                     { *@
+@*                         <div id=@piece.Name class="modalSlide"> *@
+@*                             <img class="modalImg" src="@piece.Directory" alt=""/> *@
+@*                         </div> *@
+@*                     } *@
+                    
+                    <div id="Tiger" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Tiger.jpg" alt=""/>
+                    </div>
+                    <div id="Jaguar" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Jaguar.jpg" alt=""/>
+                    </div>
+                    <div id="Skull" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Skull.jpg" alt=""/>
+                    </div>
+                    <div id="Davy" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Davy.jpg" alt=""/>
+                    </div>
+                    <div id="Wren" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Wren.jpg" alt=""/>
+                    </div>
+                    <div id="Mackys" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Mackys.jpg" alt=""/>
+                    </div>
+                    <div id="Henry" class="modalSlide">
+                        <img class="modalImg" src="../Style/Images/Henry.jpg" alt=""/>
+                    </div>
                 </div>
             </div>
         </div>

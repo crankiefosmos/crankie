@@ -22,18 +22,7 @@ namespace Portfolio.Controllers
 
         public IActionResult Index()
         {
-            List<ArtGallery> Gallery = new List<ArtGallery>()
-            {
-                new ArtGallery() {Name = "Tiger", Directory = "../Style/Images/Tiger.jpg"},
-                new ArtGallery() {Name = "Jaguar", Directory = "../Style/Images/Jaguar.jpg"},
-                new ArtGallery() {Name = "Skull", Directory = "../Style/Images/Skull.jpg"},
-                new ArtGallery() {Name = "Davy", Directory = "../Style/Images/Davy.jpg"},
-                new ArtGallery() {Name = "Wren", Directory = "../Style/Images/Wren.jpg"},
-                new ArtGallery() {Name = "Mackys", Directory = "../Style/Images/Mackys.jpg"},
-                new ArtGallery() {Name = "Henry", Directory = "../Style/Images/Henry.jpg"}
-            };
-
-            return View(Gallery);
+            return View();
         }
 
         public IActionResult Privacy()
