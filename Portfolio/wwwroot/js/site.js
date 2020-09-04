@@ -1,5 +1,6 @@
 ﻿
 var artModal = document.getElementById("artModal");
+var resumeModal = document.getElementsByClassName('resumeModal')[0];
 var modalImgWidth = -600;
 var biaxProj = document.getElementById('biaxialRender');
 var solarProj = document.getElementById('solarRender');
@@ -11,6 +12,22 @@ var scisHeader = document.getElementById('scissorHeader');
 var marbHeader = document.getElementById('marbleHeader');
 
 var shouldScroll = true;
+
+
+toggleResumeModal = () => {
+    if (resumeModal.classList.contains('showResume')) {
+        resumeModal.classList.remove('showResume');
+        window.removeEventListener("scroll", toggleResumeModal);
+        return;
+    }
+    resumeModal.classList.add('showResume');
+    scrollCloseResume();
+    
+}
+
+scrollCloseResume = () => {
+    window.addEventListener('scroll', toggleResumeModal);
+}
 
 
 /// animate sections ////
@@ -195,21 +212,25 @@ scrollModalRight = () => {
 }
 
 window.addEventListener('keydown', function(event){
-    const direction = event.key;
+    const key = event.key;
+    if (key === "Escape"){
+        closeProjectModal();
+        closeResumeModal();
+        artModal.style.display = 'none';
+    }
+    
     if (artModal?.style.display === "block"){
-        switch (direction) {
+        switch (key) {
             case "ArrowLeft":
                 scrollModalLeft();
                 break;
             case "ArrowRight":
                 scrollModalRight();
                 break;
-            case "Escape":
-                artModal.style.display = "none";
         }
     }
     else{
-        switch (direction) {
+        switch (key) {
             case "ArrowLeft":
                 scrollArtLeft();
                 break;

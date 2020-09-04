@@ -17,9 +17,10 @@
 <div id="navbar">
     <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
         <div id="navs">
-            <a asp-area="" asp-controller="Home" asp-action="Index" onsubmit="fadeOutPage()" >HOME</a>
-            <a asp-area="" asp-controller="Home" asp-action="About" onsubmit="fadeOutPage()">ABOUT</a>
+             <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
             <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+            <a onclick="toggleResumeModal()">RESUME</a>
         </div>
     </div>
 </div>
@@ -33,10 +34,10 @@
         </div>
         <div>
             <h2>
-                <span class="careerLink" id="developerLink" style="animation-delay: 1.5s" onclick="scrollToElement('softwareTitle')">DEVELOPER</span>
-                <span class="careerLink" id="engineerLink" style="animation-delay: 2.5s" onclick="scrollToElement('engineerTitle')">ENGINEER</span>
-                <span class="careerLink" id="leaderLink" style="animation-delay: 3.5s" onclick="scrollToElement('leaderTitle')">LEADER</span>
-                <span class="careerLink" id="artistLink" style="animation-delay: 4.5s" onclick="scrollToElement('artistTitle')">ARTIST</span>
+                <span class="careerLink" id="developerLink" style="animation-delay: 2s" onclick="scrollToElement('softwareTitle')">DEVELOPER</span>
+                <span class="careerLink" id="engineerLink" style="animation-delay: 2.85s" onclick="scrollToElement('engineerTitle')">ENGINEER</span>
+                <span class="careerLink" id="leaderLink" style="animation-delay: 3.7s" onclick="scrollToElement('leaderTitle')">LEADER</span>
+                <span class="careerLink" id="artistLink" style="animation-delay: 4.55s" onclick="scrollToElement('artistTitle')">ARTIST</span>
             </h2>
         </div>
     </div>
@@ -135,7 +136,7 @@
         <h1>ENGINEER</h1>
     </div>
 
-    <div style="width: 95vw; margin: auto; display: flex">
+    <div style="width: 95vw; margin: auto; display: flex; justify-content: space-around">
         <div class="career-row show-on-scroll" id="engProjects">
             <h2>PROJECTS</h2>
             <div id="biaxialLink">BIAXIAL TENSILE TESTER</div>
@@ -267,6 +268,13 @@
 </div>
 
 
+<div class="resumeModal">
+    <div style="display: flex; flex-direction: column; ">
+        <a href="Resume/Isaiah Young.docx" download="Isaiah-Young-CV.docx">.DOCX</a>
+        <a href="Resume/Isaiah Young CV.pdf" download="Isaiah-Young-CV.pdf">.PDF</a>
+    </div>
+</div>
+
 <div id="projectModal" class="modal">
     <p style="width: max-content; margin: 0 auto 20px; color: #989898 ">ENGINEERING PROJECTS</p>
     <div id="closeProj" onclick="closeProjectModal()">X</div>
@@ -295,15 +303,14 @@
                 <br/><br/>
                 Extensive project management was required due to a limited budget and a very tight schedule on which to design
                 and construct the device. This required the use of such common documents as a bill of materials (BOM) and 
-                a Gantt chart, and requried thorough risk assesment and contigency planning if the face of the COVID pandamic.
+                a Gantt chart, and requried thorough risk assesment and contigency planning in the face of the COVID pandamic.
                 Additionally, in order to receive supplemental funding, it was required that 30 interviews
                 be conducted to ensure a target market is available and willing to purchase the device. 
                 <br/><br/>
                 Not shown in the current image is the camera/camera mount which performs the Digital Image Correlation (DIC) that
                 maps the strain field onto the specimen using special software. This design is currently being finalized and 
-                construction/camera testing are set to begin mid-September. Performance evaluation 
-
-
+                construction/camera testing are set to begin mid-September.
+                
             </div>
         </div>
         <div id="scissorRender" class="project">
@@ -315,9 +322,15 @@
             <div class="projText">
                 The small scissor lift was designed with the objective of carrying at least 9kg of weight while remaining
                 as light as possible. The lift came with several constraints such as weight, build time, max deflection, min and max height,
-                and how many parts could be 3D printed. <br/>
+                and how many parts could be 3D printed. <br/> <br/>
                 This lift was built by a team of four engineers. The aluminum-6061 legs and lead screw were machined while the
-                base and table were printed with a thermoplastic polymer.
+                base and table were printed with a thermoplastic polymer. To ensure that the lift was as light as possible while
+                able to carry the max load of 9kg, force and moment analyses were perfomed on the legs of the lift. <br/>
+                <br/>
+                The lift supported the 9kg load with a large factor of safety, had only 2mm of deflection, and was one of the
+                lightest lifts constructed. However, it could only reach a maximum height of 193mm due to a last minute alteration.  
+                In the future, a smaller factor of safety would be used to allow for lighter legs and any last minute alterations
+                would be more heavily considered for their necessity to performance. 
             </div>
         </div>
         <div id="solarRender" class="project">
@@ -358,11 +371,39 @@
         </div>
         <div id="marbleRender" class="project">
             <div style="width: 50%;">
-                <div class="projImg" id="marbleImg"></div>
+                <div class="projImg" id="marbleImg">
+                    <p>
+                        (shown here is only an example of a marble sorter project. I don't possess an image of my project)
+                    </p>
+                </div>
+                
             </div>
 
             <div class="projText">
-                marbles
+                My freshman year of college, I completed a semester-long project with a team of mechanical engineers. This 
+                project sought to physically organize 100 marbles by size and color within 5 minutes using Matlab Lego Mindstorms 
+                (Matlab code that controls various motors and sensors). The project did not go well as the team of 8 was highly
+                unmotivated and left a large majority of the work to another teammate and myself. <br/> 
+                <br/>
+                This is not to pass any of the 
+                blame from myself; I realized the team's disposition from almost the start but still waited to put forth the necessary effort.
+                I also tend to take the lead in projects and in this case, while I did take an initiative role, I did not do so effectively.
+                I organized tasks for my teammates and failed to assign them correctly or adequately motivate my teammates for their roles.
+                <br/><br/>
+                This led to my fellow motivated teammate and I working nonstop on the project for the final two weeks before 
+                it was due. Although the project received a (gracious) passing grade, my spirit was broken as I felt the previous
+                punishing two weeks had gone unappreciated.
+                <br/><br/>
+                I learned many valuable lessons from this project. First, that not-procrastinating is not the same as starting early.
+                Doing your own work right when you need to leaves no room for error correction or helping the team. Second, when assuming 
+                a leadership role, assume it genuinely and commit. Although I was self-appointed and, thus, reluctant to appear autocratic,
+                I should have put more effort towards motivating and directing my team. 
+                <br/><br/>
+                Finally, (although this is not the first time I had
+                experienced this), sometimes you fail because of your own lack of foresight and you must accept that you won't consider everything. 
+                The room our project was tested in had different lighting than the room in which we calibrated the sensors, so the sensors worked 
+                far less accurately. This issue had not been considered by my team and when it occurred it seemed painfully obvious.
+
             </div>
         </div>
     </div>
