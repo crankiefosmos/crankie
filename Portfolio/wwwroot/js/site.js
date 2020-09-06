@@ -39,7 +39,7 @@ function loop() {
     
     elementsToShow.forEach(function (element) {
         if (isElementInViewport(element)) {
-            element.classList.add('is-visible'); 
+            element.classList.add('is-visible');
         }
     });
     

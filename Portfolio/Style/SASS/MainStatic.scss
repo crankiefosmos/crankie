@@ -1,9 +1,16 @@
-﻿text {
-  font-family: Helvetica Neue, Arial, sans-serif;
-}
-
+﻿
 body {
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  padding:0;
+}
+
+h1 {
+  
 }
 
 :root {
@@ -82,7 +89,7 @@ body {
   height: 0;
   transform: translateY(-5vh);
   padding-top: calc(3008 / 3682 * 100%);
-  background-image: url("../../Style/Images/me-denim.jpg");
+  background-image: url("Images/me-denim.jpg");
   background-size: 100% 100%;
   color: white;
   position: relative;
@@ -273,7 +280,7 @@ body {
 }
 
 #softwareTitle {
-  background-image: url("../../Style/Images/greenleaves.jpg");
+  background-image: url("Images/greenLeaves.jpg");
 }
 
 #softwareSection {
@@ -285,7 +292,7 @@ body {
 }
 
 #engineerTitle {
-  background-image: url("../../Style/Images/koi-fish.jpg");
+  background-image: url("Images/koi-fish.jpg");
   background-size: 100% 200%;
 }
 
@@ -390,7 +397,7 @@ body {
 }
 
 #artistTitle {
-  background-image: url("../../Style/Images/redbluesmoke.jpg");
+  background-image: url("Images/redbluesmoke.jpg");
 }
 
 #artworkSection {
@@ -613,23 +620,23 @@ body {
 }
 
 #scissorImg{
-  background-image: url("../../Style/Images/scissor-lift-schem.jpg");
+  background-image: url("Images/scissor-lift-schem.jpg");
   padding-top: calc(394 / 512 * 100%);
 }
 
 #marbleImg{
-  background-image: url("../../Style/Images/marble-example.JPG");
+  background-image: url("Images/marble-example.JPG");
   padding-top: calc(434 / 811 * 100%);
 }
 
 #solarImg{
-  background-image: url("../../Style/Images/solar.jpg");
+  background-image: url("Images/solar.jpg");
   padding-top: calc(240 / 282 * 90%);
   width: 90%;
 }
 
 #biaxialImg{
-  background-image: url("../../Style/Images/biaxial.gif");
+  background-image: url("Images/biaxial.gif");
   padding-top: calc(582 / 717 * 92%);
   width: 92%
 }
@@ -685,7 +692,7 @@ body {
 ///////  Leader ////////
 
 #leaderTitle {
-  background-image: url("../../Style/Images/antelopeCanyon1.jpg");
+  background-image: url("Images/antelopeCanyon1.jpg");
 }
 
 #leaderTitle h1 {
@@ -742,19 +749,19 @@ body {
 
 
 #buccPic {
-  background-image: url("../../Style/Images/bucc.jpg");
+  background-image: url("Images/bucc.jpg");
 }
 
 #barkPic {
   background-size: 150% 100%;
   background-position: 30%;
-  background-image: url("../../Style/Images/bark.jpg");
+  background-image: url("Images/bark.jpg");
 }
 
 #mcPic {
   background-size: 150% 150%;
   background-position: 50% 35%;
-  background-image: url("../../Style/Images/mcPic.jpg");;
+  background-image: url("Images/mcPic.jpg");;
 }
 
 
@@ -829,7 +836,7 @@ body {
 }
 
 #aboutMeImg {
-  background-image: url("../../Style/Images/grainyMe.JPG");
+  background-image: url("Images/grainyMe.JPG");
   background-size: 100% 100%;
   position: relative;
   z-index: -1;
@@ -852,7 +859,7 @@ body {
 }
 
 #macImg {
-  background-image: url("../../Style/Images/me-and-mac.jpg");
+  background-image: url("Images/me-and-mac.jpg");
   background-size: 90% 100%;
   background-repeat: no-repeat;
   position: relative;

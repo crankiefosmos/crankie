@@ -35,4 +35,8 @@
       <None Include="wwwroot\Resume\Isaiah Young.docx" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Azure-static-files" />
+    </ItemGroup>
+
 </Project>

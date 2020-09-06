@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="MainStatic.css">
+</head>
+<body style=" background-color: rgb(109, 126, 127); ">
+<div id="navbar">
+    <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
+        <div id="navs">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+            <a onclick="toggleResumeModal()">RESUME</a>
+            <div id="resumeModal">
+                test
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="aboutPageWrapper">
+
+    <div id="aboutMe">
+        <h1>about</h1>
+        <p>
+            My name is Isaiah Young. <br/>
+            I write code, engineer, and make art. <br/> But there's a lot more to me than that. <br/>
+            <br/>
+            The two biggest things in my world are Macky, my best friend and the love of my life, and Juniper, my daughter
+            (who will be here Oct. 27th). I live a life full of love because of them and would not trade places with anyone.<br/>
+            <br/>
+            I'm a naturally curious person and I spend a considerable amount of time learning new things. This is one of
+            the reasons I enjoy programming so much: there's so much to take in and so many different approaches available
+            to the same problem. I spend most car rides listening to podcasts by people like Sam Harris, Joe Rogan, and Duncan Trussell.
+            I read mostly nonfiction and philosophy, and on YouTube I like watching lectures by Jordan Peterson, Kurzgesagt, and Alan Watts.<br/>
+            <br/>
+            I enjoy an interesting mixture of individualism and collectivism. On one hand, I highly value independence
+            and have consistently held a job since the age of 15, moved out of my parent’s house while still a senior in
+            high school (when I turned 18), and have paid for everything from my car to my college education to my medical
+            expenses since then. On the other hand, I value my relationships above anything else, and I truly believe
+            we exist for each other.  <br/>
+            <br/>
+            As you could tell by my website, I'm fascinated by the natural world. When I don't have my head in front of
+            my computer, it's in the clouds. Although pragmatic in my work, in my personal life I like to spend time asking "why?"
+            as opposed to "how?". Most of the books I read are concerned with philosophy, religion, and metaphysics.
+            My beliefs about reality align mostly with Zen Buddhism, though I rarely partake in it's practices. <br/>
+            <br/>
+            I'm very extraverted and enjoy going out, attending concerts, and just meeting new people and making new friends.
+            If you'd like to contact me, visit my <a asp-area="" asp-controller="Home" asp-action="Contact" style="color: cornflowerblue">contact</a> page
+        </p>
+
+    </div>
+
+    <div style="margin-top: 10vh; height: 100%;">
+        <div id="meWrapper">
+            <div id="aboutMeImg"></div>
+        </div>
+
+        <div id="macWrapper">
+            <div id="macImg"></div>
+        </div>
+    </div>
+</div>
+
+<div class="resumeModal">
+    <div style="display: flex; flex-direction: column; ">
+        <a href="Resume/Isaiah Young.docx" download="Isaiah-Young-CV.docx">.DOCX</a>
+        <a href="Resume/Isaiah Young CV.pdf" download="Isaiah-Young-CV.pdf">.PDF</a>
+    </div>
+</div>
+
+
+</body>
+</html>

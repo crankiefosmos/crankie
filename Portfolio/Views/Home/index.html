@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Isaiah Young</title>
+    <link rel="stylesheet" type="text/css" href="MainStatic.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color: #fafafa; height: max-content; margin: 0;">
+
+<div id="navbar">
+    <div style="width: 100%; height: 100%; background-color: #1b1e21; opacity: .5">
+        <div id="navs">
+            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+            <a asp-area="" asp-controller="Home" asp-action="About">ABOUT</a>
+            <a asp-area="" asp-controller="Home" asp-action="Contact">CONTACT</a>
+            <a onclick="toggleResumeModal()">RESUME</a>
+        </div>
+    </div>
+</div>
+
+<div id="pageWrapper">
+
+    <div id="nameSection">
+        <div id="nameAndTitles">
+            <div style="margin-top: 8vh;">
+                <h1 id="nameHeader">ISAIAH YOUNG</h1>
+            </div>
+            <div>
+                <h2>
+                    <span class="careerLink" id="developerLink" style="animation-delay: 2s" onclick="scrollToElement('softwareTitle')">DEVELOPER</span>
+                    <span class="careerLink" id="engineerLink" style="animation-delay: 2.85s" onclick="scrollToElement('engineerTitle')">ENGINEER</span>
+                    <span class="careerLink" id="leaderLink" style="animation-delay: 3.7s" onclick="scrollToElement('leaderTitle')">LEADER</span>
+                    <span class="careerLink" id="artistLink" style="animation-delay: 4.55s" onclick="scrollToElement('artistTitle')">ARTIST</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div id="intro" class="show-on-scroll">
+        <p style="font-weight: bold">A LITTLE ABOUT ME</p>
+        <div>
+            <p>
+                With a degree in Mechanical Engineering, over a year of experience writing clean, full
+                stack code for technical subject matter, and a highly developed artistic talent, I bring a well-rounded ability
+                to turn technical needs into efficient code and an intuitive and aesthetic user experience. For example,
+                this very website was coded from scratch and without a template by yours truly!
+            </p>
+        </div>
+    </div>
+
+
+    <div id="softwareTitle" class="sectionTitle">
+        <h1>DEVELOPER</h1>
+    </div>
+
+    <div style="width: 95vw; margin: auto; display: flex; justify-content: space-around">
+
+        <div class="career-row show-on-scroll" id="softwareSection" style="width: 55%">
+            <div>
+                <h1 id="software-development">SOFTWARE DEVELOPER</h1>
+                <h2>ENERGY SYSTEMS LABORATORY <br/> TEXAS A&M</h2>
+                <div style="">
+                    <div>
+                        <p>The Lab focuses on energy-related research, energy efficiency, and emissions reduction. Working
+                            here requires not only an ability to code but a working knowledge of mechanical engineering.
+                            As a software developer at the ESL, I take great care in crafting efficient, readable code
+                            that gives as much to our users as it does to my fellow developers. Being a part of the ESL
+                            software team means:
+                        </p>
+                    </div>
+                    <div>
+                        <p class="bullet">&#8226; Learning to write full stack code for data analysis and visualization</p>
+                        <p class="bullet">&#8226; Developing front-end, user-oriented interfaces</p>
+                        <p class="bullet">&#8226; Debugging, maintaining, and improving self-documenting legacy code</p>
+                        <p class="bullet">&#8226; Collaborating with a team of engineers to design unit-test software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="career-row show-on-scroll" id="softwareSkills">
+            <h2 style="text-align: center">SKILLS</h2>
+            <div>
+                <span>C#</span>
+                <div class="skillLevel">
+                    <div style="width: 90%"></div>
+                </div>
+            </div>
+            <div>
+                <span>JavaScript</span>
+                <div class="skillLevel">
+                    <div style="width: 70%"></div>
+                </div>
+            </div>
+            <div>
+                <span>HTML5</span>
+                <div class="skillLevel">
+                    <div style="width: 100%"></div>
+                </div>
+            </div>
+            <div>
+                <span>CSS3</span>
+                <div class="skillLevel">
+                    <div style="width: 100%"></div>
+                </div>
+            </div>
+            <div>
+                <span>jQuery</span>
+                <div class="skillLevel">
+                    <div style="width: 40%"></div>
+                </div>
+            </div>
+            <div>
+                <span>Python</span>
+                <div class="skillLevel">
+                    <div style="width: 20%"></div>
+                </div>
+            </div>
+            <div>
+                <span>SQL Database</span>
+                <div class="skillLevel">
+                    <div style="width: 10%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="engineerTitle" class="sectionTitle">
+        <h1>ENGINEER</h1>
+    </div>
+
+    <div style="width: 95vw; margin: auto; display: flex; justify-content: space-around">
+        <div class="career-row show-on-scroll" id="engProjects">
+            <h2>PROJECTS</h2>
+            <div id="biaxialLink">BIAXIAL TENSILE TESTER</div>
+            <div id="scissorLink">SCISSOR LIFT</div>
+            <div id="solarLink">SOLAR HEATED OVEN</div>
+            <div style="margin-bottom: 0" id="marbleLink">MARBLE SORTER</div>
+        </div>
+
+        <div class="career-row show-on-scroll" id="engineeringSection">
+            <div>
+                <h1 id="engineering">MECHANICAL ENGINEER</h1>
+                <h2>TEXAS A&M UNIVERSITY</h2>
+                <p>As a student in one of the top Mechanical Engineering programs in the country, I learn to combine
+                    the multi-disciplinary knowledge required of a mechanical engineer with the soft skills and
+                    communication required to be part of an effective team. Several team projects, hands-on lab
+                    experience, and an extensive courseload have worked to shape me into the careful, logical, and
+                    diligent engineer I am today. The subjects in which I excel most and have a strong interest include:</p>
+                <div id="engSubjects">
+                    <div class="engSubject">THERMODYNAMICS</div>
+                    <div class="engSubject">MATERIALS SCIENCE</div>
+                    <div class="engSubject">SOLAR ENERGY</div>
+                    <div class="engSubject" id="designSubject">MECHANICAL DESIGN</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="leaderTitle" class="sectionTitle">
+        <h1>LEADER</h1>
+    </div>
+
+
+    <div style="margin-top: 5vh; padding: 5vh">
+        <div id="leaderSection">
+            <div class="leaderRole show-on-scroll" id="buccRole">
+                <div id="buccPic" class="circleImg"></div>
+                <h1>BUCC BIG EVENT</h1>
+                <h2>President | Project ID</h2>
+                <p>
+                    A community outreach program in which I worked directly with the city of Brenham, Blinn College, and
+                    clients to complete 5 projects throughout the community. I supervised sites, executives, funding, and
+                    60 volunteers to complete all projects on time and under budget.
+                </p>
+                <p>
+                    More info can be found <a href="https://www.blinn.edu/news/2017/04/blinn-brenham-students-give-back-to-community-buccaneer-big-event.html"
+                                              target="_blank" style="color: cornflowerblue; cursor: pointer">here</a>
+                </p>
+            </div>
+            <div class="leaderRole show-on-scroll" id="barkRole">
+                <div id="barkPic" class="circleImg"></div>
+                <h1>BARK IN THE PARK</h1>
+                <H2>Co-founder | Executive</h2>
+                <p>
+                    A community outreach program which increased the local shelter's adoption rates by 30%. I managed all
+                    program aspects including operation, revenue, and volunteer acquisition for 1 year. The program was
+                    praised by the Director of Environmental Health for Kerrville, Raymond Garcia, for its initiative and effectiveness.
+                </p>
+                <p>
+                    More info can be found at BITP's <a href="https://www.facebook.com/barkintheparkktx/" target="_blank">facebook</a>
+                </p>
+            </div>
+            <div class="leaderRole show-on-scroll" id="mcRole">
+                <div id="mcPic" class="circleImg"></div>
+                <h1>McDONALDs</h1>
+                <H2>Manager</h2>
+                <p>
+                    As a manager I was tasked with leading a crew of around 15 people much older than myself in a fast-paced
+                    environment. This job required that I engage in conflict resolution with customers and co-workers almost
+                    everyday. I also trained around 20 new workers and ensured above-and-beyond customer service.
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="artistTitle" class="sectionTitle">
+        <h1>ARTIST</h1>
+    </div>
+
+    <div class="career-row show-on-scroll" id="artistSection">
+        <div id="slider">
+            <button style="left: -10%;" id="scrollArtLeft" class="scrollArtButton">&#60;</button>
+            <button style="right: -10%;" id="scrollArtRight" class="scrollArtButton">&#62;</button>
+            <div style="overflow: hidden">
+                <div id="slide-track">
+                    
+
+                    <div id="Tiger" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Tiger.jpg" alt=""/>
+                    </div>
+                    <div id="Jaguar" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Jaguar.jpg" alt=""/>
+                    </div>
+                    <div id="Skull" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Skull.jpg" alt=""/>
+                    </div>
+                    <div id="Davy" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Davy.jpg" alt=""/>
+                    </div>
+                    <div id="Wren" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Wren.jpg" alt=""/>
+                    </div>
+                    <div id="Mackys" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/Mackys.jpg" alt=""/>
+                    </div>
+                    <div id="Henry" class="slide" onclick="showArtModal(this.id)">
+                        <img class="slideImg" src="Images/henry.jpg" alt=""/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div style="padding: 5px; width: max-content; margin: auto; border-top: 1px solid rgba(0,0,0,.2); border-bottom: 1px solid rgba(0,0,0,.2);">
+            <p>
+                Being an artist has developed my creativity, refined my attention for detail, and increased my patience.
+                While my drawings are realistic, I enjoy making simple graphics to capture complex ideas and I am currently
+                learning Adobe Illustrator to practice and create such works. My artistic approach towards websites is minimilist
+                with a desire to make software tools and technical matter pleasing to read and use.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="artModal" class="modal">
+    <div class="modal-content">
+        <span id="closeArt">&times;</span>
+        <div id="modalSlider">
+            <button id="scrollModalLeft" class="scrollArtButton">&#60;</button>
+            <button id="scrollModalRight" class="scrollArtButton">&#62;</button>
+            <div style="overflow: hidden">
+                <div id="modal-slide-track">
+
+                    <div id="Tiger" class="modalSlide">
+                        <img class="modalImg" src="Images/Tiger.jpg" alt=""/>
+                    </div>
+                    <div id="Jaguar" class="modalSlide">
+                        <img class="modalImg" src="Images/Jaguar.jpg" alt=""/>
+                    </div>
+                    <div id="Skull" class="modalSlide">
+                        <img class="modalImg" src="Images/Skull.jpg" alt=""/>
+                    </div>
+                    <div id="Davy" class="modalSlide">
+                        <img class="modalImg" src="Images/Davy.jpg" alt=""/>
+                    </div>
+                    <div id="Wren" class="modalSlide">
+                        <img class="modalImg" src="Images/Wren.jpg" alt=""/>
+                    </div>
+                    <div id="Mackys" class="modalSlide">
+                        <img class="modalImg" src="Images/Mackys.jpg" alt=""/>
+                    </div>
+                    <div id="Henry" class="modalSlide">
+                        <img class="modalImg" src="Images/henry.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="resumeModal">
+    <div style="display: flex; flex-direction: column; ">
+        <a href="Resume/Isaiah Young.docx" download="Isaiah-Young-CV.docx">.DOCX</a>
+        <a href="Resume/Isaiah Young CV.pdf" download="Isaiah-Young-CV.pdf">.PDF</a>
+    </div>
+</div>
+
+<div id="projectModal" class="modal">
+    <p style="width: max-content; margin: 0 auto 20px; color: #989898 ">ENGINEERING PROJECTS</p>
+    <div id="closeProj" onclick="closeProjectModal()">X</div>
+    <div id="projModalHeader">
+        <span id="biaxialHeader" onclick="showProject('biaxial')">BIAXIAL TENSILE TESTER</span>
+        <span id="scissorHeader" onclick="showProject('scissor')">SCISSOR LIFT</span>
+        <span id="solarHeader" onclick="showProject('solar')">SOLAR HEATED OVEN</span>
+        <span id="marbleHeader" onclick="showProject('marble')">MARBLE SORTER</span>
+    </div>
+    <div id="projRenderDiv">
+        <div id="biaxialRender" class="project">
+            <div style="width: 50%;">
+                <div class="projImg" id="biaxialImg"></div>
+            </div>
+
+            <div class="projText">
+                This project seeks to develop a removable attachment that can be inserted into a uniaxial Instron machine
+                that will biaxially load a specimen. This device is important because biaxial machines are very expensive, and,
+                unlike Instron machines, quite uncommon.
+                <br/><br/>
+                This is my senior capstone project and has been beneficial in my growth as an engineer. This design is currently
+                in the works but so far we (a team of 6 mechanical engineers) have completed almost the entire design life cycle.
+                We began with defining the needs and requirements of the design and deriving our parameters from that. Once we
+                knew those, we began to develop concepts. Concepts from hydraulic application to a scissor lift type mechanism were
+                considered, and ultimately the A-frame "Frankenstein" design shown to the left was chosen.
+                <br/><br/>
+                Extensive project management was required due to a limited budget and a very tight schedule on which to design
+                and construct the device. This required the use of such common documents as a bill of materials (BOM) and
+                a Gantt chart, and requried thorough risk assesment and contigency planning in the face of the COVID pandamic.
+                Additionally, in order to receive supplemental funding, it was required that 30 interviews
+                be conducted to ensure a target market is available and willing to purchase the device.
+                <br/><br/>
+                Not shown in the current image is the camera/camera mount which performs the Digital Image Correlation (DIC) that
+                maps the strain field onto the specimen using special software. This design is currently being finalized and
+                construction/camera testing are set to begin mid-September.
+
+            </div>
+        </div>
+        <div id="scissorRender" class="project">
+
+            <div style="width: 50%;">
+                <div class="projImg" id="scissorImg"></div>
+            </div>
+
+            <div class="projText">
+                The small scissor lift was designed with the objective of carrying at least 9kg of weight while remaining
+                as light as possible. The lift came with several constraints such as weight, build time, max deflection, min and max height,
+                and how many parts could be 3D printed. <br/> <br/>
+                This lift was built by a team of four engineers. The aluminum-6061 legs and lead screw were machined while the
+                base and table were printed with a thermoplastic polymer. To ensure that the lift was as light as possible while
+                able to carry the max load of 9kg, force and moment analyses were perfomed on the legs of the lift. <br/>
+                <br/>
+                The lift supported the 9kg load with a large factor of safety, had only 2mm of deflection, and was one of the
+                lightest lifts constructed. However, it could only reach a maximum height of 193mm due to a last minute alteration.
+                In the future, a smaller factor of safety would be used to allow for lighter legs and any last minute alterations
+                would be more heavily considered for their necessity to performance.
+            </div>
+        </div>
+        <div id="solarRender" class="project">
+            <div style="width: 50%;">
+                <div class="projImg" id="solarImg"></div>
+            </div>
+
+            <div class="projText">
+                The temperature controlled solar oven was designed to simulate a chicken egg incubator which could maintain
+                a narrow temperature range of 99 - 102&#8457;. It is crucial that chicken eggs stay within this temperature
+                range for healthy chick growth. By using solar energy and a cost effective design, it is possible to reduce
+                the cost of chicken egg incubation. To accomplish this, an oven with the following features was designed:
+                <br/><br/>
+                <p>&#8226; Three removable mirrors</p>
+                <p>&#8226; Microcontrolled cover </p>
+                <p>&#8226; Glass top</p>
+                <p>&#8226; Arduino microcontroller</p>
+                <p>&#8226; Temperature sensor</p>
+                <p>&#8226; Styrofoam and aluminum insulation</p>
+                <br/>
+                With these features it was possible to focus sunlight with the mirrors through the glass top to heat up the
+                inside of the oven. The inside was fixed with a temp sensor that connected to an external microcontroller.
+                The temp sensor would trigger the microcontroller to open or close the cover, which would allow the oven
+                to heat up (if open) or cool down (if closed).
+                <br/><br/>
+                The initial design ran into setbacks, however, due to poor insulation and could only reach a max temperature of
+                about 85&#8457; as a result. To combat this, the mirror angles were adjusted to point more directly into the
+                box; the inside was painted black and insulated with more styrofoam, which worked to both add insulation and
+                decrease the area being heated; and, finally, the temperature sensor was placed in direct sunlight to more accurately
+                measure the temperature inside the oven.
+                <br/><br/>
+                Once the model was updated, the device was able to achieve its target temperature range of 99-102&#8457;
+                The new design was able to maintain a temp range of about 5&#8457;. More advanced designs would contain
+                an element which could retain excess heat for times when the sun is low. While this design wasn't perfect, it did provide
+                a precedent for future solar incubators.
+
+            </div>
+        </div>
+        <div id="marbleRender" class="project">
+            <div style="width: 50%;">
+                <div class="projImg" id="marbleImg">
+                    <p>
+                        (shown here is only an example of a marble sorter project. I don't possess an image of my project)
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="projText">
+                My freshman year of college, I completed a semester-long project with a team of mechanical engineers. This
+                project sought to physically organize 100 marbles by size and color within 5 minutes using Matlab Lego Mindstorms
+                (Matlab code that controls various motors and sensors). The project did not go well as the team of 8 was highly
+                unmotivated and left a large majority of the work to another teammate and myself. <br/>
+                <br/>
+                This is not to pass any of the
+                blame from myself; I realized the team's disposition from almost the start but still waited to put forth the necessary effort.
+                I also tend to take the lead in projects and in this case, while I did take an initiative role, I did not do so effectively.
+                I organized tasks for my teammates and failed to assign them correctly or adequately motivate my teammates for their roles.
+                <br/><br/>
+                This led to my fellow motivated teammate and I working nonstop on the project for the final two weeks before
+                it was due. Although the project received a (gracious) passing grade, my spirit was broken as I felt the previous
+                punishing two weeks had gone unappreciated.
+                <br/><br/>
+                I learned many valuable lessons from this project. First, that not-procrastinating is not the same as starting early.
+                Doing your own work right when you need to leaves no room for error correction or helping the team. Second, when assuming
+                a leadership role, assume it genuinely and commit. Although I was self-appointed and, thus, reluctant to appear autocratic,
+                I should have put more effort towards motivating and directing my team.
+                <br/><br/>
+                Finally, (although this is not the first time I had
+                experienced this), sometimes you fail because of your own lack of foresight and you must accept that you won't consider everything.
+                The room our project was tested in had different lighting than the room in which we calibrated the sensors, so the sensors worked
+                far less accurately. This issue had not been considered by my team and when it occurred it seemed painfully obvious.
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="site.js" type="text/javascript"></script>
+
+<script>
+    (function(){
+        autoScrollArt();
+        setTimeout(arguments.callee, 2000);
+    })();
+</script>
+
+
+</body>
+</html>
