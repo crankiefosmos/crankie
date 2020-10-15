@@ -405,7 +405,7 @@ body {
   height: 180px;
   margin: 0 auto 5vh;
   position: relative;
-  width: 1000px;
+  width: 75%;
 
   &::before,
   &::after {
@@ -485,7 +485,7 @@ body {
   height: max-content;
 }
 
-.modal-contents {
+.modal-content {
   display: block;
   margin: auto;
   width: var(--modal-width);
@@ -525,6 +525,24 @@ body {
   right: -60px;
   outline: none;
   top: 45%
+}
+
+#closeArt {
+  width: 35px;
+  color: white;
+  position: absolute;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #1b1e21;
+  opacity: 0.6;
+  top: -20px;
+  right: -20px;
+  z-index: 4;
+  font-size: 30px;
+  line-height: 27px;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #closeArt:hover {
@@ -949,7 +967,7 @@ body {
   z-index: 3;
   font-weight: bold;
   position: relative;
-  height: 45vh;
+  height: 335px;
   width: 30vw;
   background-color: #ffffffb9;
   border-radius: 12px;
