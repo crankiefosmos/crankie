@@ -220,13 +220,6 @@
         <div style="overflow: hidden">
             <div id="slide-track">
 
-@*                 @foreach (var piece in Model) *@
-@*                 { *@
-@*                     <div id="@piece.Name" class="slide" onclick="showArtModal(this.id)"> *@
-@*                         <img class="slideImg" src="@piece.Directory" alt=""/> *@
-@*                     </div> *@
-@* *@
-@*                 } *@
                 
                 <div id="Tiger" class="slide" onclick="showArtModal(this.id)">
                     <img class="slideImg" src="../Style/Images/Tiger.jpg" alt=""/>
@@ -267,8 +260,7 @@
 
 
 <div id="artModal" class="modal">
-    <div class="modal-content">
-        <span id="closeArt">&times;</span>
+    <div class="modal-contents">
         <div id="modalSlider">
             <button id="scrollModalLeft" class="scrollArtButton">&#60;</button>
             <button id="scrollModalRight" class="scrollArtButton">&#62;</button>
