@@ -5,6 +5,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Content Remove="compilerconfig.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="compilerconfig.json" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Content Update="wwwroot\Content\SASS\Intro.scss">
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -32,6 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Include="compilerconfig.json" />
       <None Include="wwwroot\Resume\Isaiah Young.docx" />
     </ItemGroup>
 

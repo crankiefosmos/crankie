@@ -7,36 +7,34 @@ body {
 }
 
 :root {
-  --modal-width: 600px;
-  --line-color: rgb(206, 87, 59);
-  --scrollButtonColor: rgb(120, 45, 40);
+    --modal-width: 600px;
+    --line-color: rgb(250,240,230);
+    --scrollButtonColor: rgb(120, 45, 40);
 }
 
 #navbar {
-  background-color: transparent;
-  position: sticky;
-  position: -webkit-sticky;
-  top: 0;
-  height: 5vh;
-  -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
-  z-index: 99;
+    background-color: #f1e6e2;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    height: 5vh;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 99;
 }
 
 #navs{
-  display: flex;
-  flex-direction: row;
-  width: max-content;
-  float: right;
+    display: flex;
+    color: black;
   line-height: 5vh;
+}
+
+.navbarItem{
+    color: black;
 }
 
 #navbar a {
   font-size: 2.2vh;
-  margin: 0 2vw;
-  color: white;
-  cursor: pointer;
-  width: max-content;
   letter-spacing: .8vw;
 }
 
@@ -345,7 +343,7 @@ body {
   height: 50px;
   line-height: 50px;
   letter-spacing: .2vw;
-  background-color: #000000c9;
+  /*background-color: #000000c9;*/
   position: relative;
   color: white;
   padding: 0 1vw;
@@ -926,7 +924,7 @@ body {
 
 
 #emailFieldset .clientInput, textarea {
-  border: 1px solid #00000061;
+/*  border: 1px solid #00000061;*/
   border-radius: 3px;
   width: 65%;
   min-width: 200px;
@@ -948,7 +946,7 @@ body {
 }
 
 #sendEmail {
-  border: 1px solid #00000061;
+ /* border: 1px solid #00000061;*/
   border-radius: 5px;
   padding: 8px 15px;
   text-align: center;
@@ -957,7 +955,7 @@ body {
   font-size: 15px;
   margin: 12px auto 0;
   cursor: pointer;
-  background-color: #000000b9;
+ /* background-color: #000000b9;*/
   color: white;
 }
 
@@ -971,7 +969,7 @@ body {
   width: 30vw;
   background-color: #ffffffb9;
   border-radius: 12px;
-  color: #000000b9;
+ /* color: #000000b9;*/
   box-shadow: inset 1px 1px 1px -0.5px hsla(0,0%,100%,.7), 3px 3px 7px -3px rgba(0,0,0,.1);
   opacity: 0;
   animation: contact 1.85s ease-in-out 2.2s forwards;
